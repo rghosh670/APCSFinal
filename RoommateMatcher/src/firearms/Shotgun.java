@@ -36,6 +36,7 @@ public class Shotgun extends Firearm {
 			shotgunPic = originalShotgunPic.get(0, 0, width, height / 2);
 
 		super.setGunImage(shotgunPic);
+		super.setDamage(10);
 
 		if (!player.getFRIncrease())
 			super.setFireRateMax(normalFireRateMax);

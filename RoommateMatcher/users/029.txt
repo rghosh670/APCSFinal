@@ -1,8 +1,0 @@
-name: Johnry Zhao
-images: Smurf, Anime
-weapons: blade
-points: 100
-patience: 3.5
-attack time: 7
-offense: 8
-defense: 2

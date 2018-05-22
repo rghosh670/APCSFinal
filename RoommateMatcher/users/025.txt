@@ -1,8 +1,0 @@
-name: Helen Wang
-images: Trump
-weapons: blade
-points: 100
-patience: 5
-attack time: 1
-offense: 8
-defense: 3

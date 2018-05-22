@@ -2,7 +2,6 @@ package blades;
 
 import character.Hitbox;
 import character.Hitboxable;
-import character.Player;
 import processing.core.PApplet;
 import processing.core.PImage;
 import stages.Stage;
@@ -21,8 +20,8 @@ public class Knife extends Blade implements Hitboxable {
 	private PApplet drawer;
 	private Hitbox hitbox;
 
-	public Knife(float x, float y, float length, float angle, PApplet drawer, Player player) {
-		super(x, y, length, angle, drawer, player);
+	public Knife(float x, float y, float length, float angle, PApplet drawer) {
+		super(x, y, length, angle);
 		// this.angle = angle;
 		this.length = length;
 		knifePic = drawer.loadImage("weaponImages" + Stage.fileSeparator + "Knife.png");
@@ -30,8 +29,8 @@ public class Knife extends Blade implements Hitboxable {
 		hitbox = new Hitbox(this, drawer);
 	}
 
-	public void draw() {
-		super.draw();
+	public void draw(PApplet drawer) {
+		super.draw(drawer);
 		hitbox.updateCoordinates();
 		this.drawer = drawer;
 		drawer.pushMatrix();
@@ -85,6 +84,22 @@ public class Knife extends Blade implements Hitboxable {
 		}
 		// drawer.popMatrix();
 		drawer.popStyle();
+	}
+
+	public float[] intersects(Hitbox other) {
+		// drawer.ellipse((float) (x1+length*Math.cos(angle)), (float)
+		// (y1-length/2+length*Math.sin(angle)), 10, 10);
+		float intX = -1, intY = -1;
+		float pointX = (float) (x1 + length * Math.cos(angle));
+		float pointY = (float) (y1 - length / 2 + length * Math.sin(angle));
+		if (pointX > other.x && pointX < other.x + other.width && pointY > other.y && pointY < other.y + other.height) {
+			intX = other.x;
+			intY = pointY;
+		}
+		if (intX > -1 && intY > -1) {
+			return new float[] { intX, intY };
+		}
+		return null;
 	}
 
 }

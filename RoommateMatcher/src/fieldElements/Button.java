@@ -64,19 +64,16 @@ public class Button {
 				DrawingSurface.background.setStage(StageState.OUTDOOR_FIELD);
 				DrawingSurface.background.setIsStage(false);
 				DrawingSurface.background.setMenu(MenuState.PLAYER_ONE_SELECT);
-				StageType.resetPlayers();
 				p.delay(100);
 			} else if (text.equals("Library")) {
 				DrawingSurface.background.setStage(StageState.LIBRARY);
 				DrawingSurface.background.setIsStage(false);
 				DrawingSurface.background.setMenu(MenuState.PLAYER_ONE_SELECT);
-				StageType.resetPlayers();
 				p.delay(100);
 			} else if (text.equals("Living Room")) {
 				DrawingSurface.background.setStage(StageState.LIVING_ROOM);
 				DrawingSurface.background.setIsStage(false);
 				DrawingSurface.background.setMenu(MenuState.PLAYER_ONE_SELECT);
-				StageType.resetPlayers();
 				p.delay(100);
 			} else if (text.equals("Menu")) {
 				DrawingSurface.background.setMenu(MenuState.MAIN_MENU);
@@ -92,71 +89,64 @@ public class Button {
 				DrawingSurface.background.setMenu(MenuState.STAGE_MENU);
 				DrawingSurface.background.setIsStage(false);
 				p.delay(100);
-			} 
-			
+			}
+
 			else if (text.equals("Choose Player One")) {
 				DrawingSurface.background.setMenu(MenuState.PLAYER_ONE_SELECT);
 				DrawingSurface.background.setIsStage(false);
 				p.delay(100);
-			} 
-			
-			
-			
+			}
+
 			else if (text.equals("Choose Player Two")) {
 				DrawingSurface.background.setMenu(MenuState.PLAYER_TWO_SELECT);
 				DrawingSurface.background.setIsStage(false);
 				p.delay(100);
 			}
-			
-			
-			
+
 			else if (text.equals("Smurf")) {
 				if (DrawingSurface.background.getMenu().equals(MenuState.PLAYER_ONE_SELECT)) {
 					DrawingSurface.p1.setPlayerState(PlayerState.SMURF);
 					DrawingSurface.background.setMenu(MenuState.PLAYER_TWO_SELECT);
-					DrawingSurface.changePlayers(DrawingSurface.p1, PlayerState.SMURF);
+
 					DrawingSurface.background.setIsStage(false);
 					p.delay(100);
 				} else {
 					DrawingSurface.p2.setPlayerState(PlayerState.SMURF);
 					DrawingSurface.background.setIsStage(true);
-					DrawingSurface.changePlayers(DrawingSurface.p2, PlayerState.SMURF);
+
+					DrawingSurface.background.getStageType().resetPlayers();
 				}
 			}
-			
-			
-			
+
 			else if (text.equals("Anime?")) {
 				if (DrawingSurface.background.getMenu().equals(MenuState.PLAYER_ONE_SELECT)) {
 					DrawingSurface.p1.setPlayerState(PlayerState.ANIME);
 					DrawingSurface.background.setMenu(MenuState.PLAYER_TWO_SELECT);
 					DrawingSurface.background.setIsStage(false);
-					DrawingSurface.changePlayers(DrawingSurface.p1, PlayerState.ANIME);
+
 					p.delay(100);
 				} else {
 					DrawingSurface.p2.setPlayerState(PlayerState.ANIME);
 					DrawingSurface.background.setIsStage(true);
-					DrawingSurface.changePlayers(DrawingSurface.p2, PlayerState.ANIME);
+					DrawingSurface.background.getStageType().resetPlayers();
 				}
-			} 
-			
-			
-			
+			}
+
 			else if (text.equals("Trump")) {
 				if (DrawingSurface.background.getMenu().equals(MenuState.PLAYER_ONE_SELECT)) {
 					DrawingSurface.p1.setPlayerState(PlayerState.TRUMP);
-					DrawingSurface.changePlayers(DrawingSurface.p1, PlayerState.TRUMP);
+
 					DrawingSurface.background.setMenu(MenuState.PLAYER_TWO_SELECT);
 					DrawingSurface.background.setIsStage(false);
 					p.delay(100);
 				} else {
 					DrawingSurface.p2.setPlayerState(PlayerState.TRUMP);
-					DrawingSurface.changePlayers(DrawingSurface.p2, PlayerState.TRUMP);
+
 					DrawingSurface.background.setIsStage(true);
+					DrawingSurface.background.getStageType().resetPlayers();
 				}
-			} 
-			
-			
+			}
+
 			else if (text.equals("FIGHT!")) {
 				DrawingSurface.background.setIsStage(true);
 			} else if (text.equals("Quit")) {

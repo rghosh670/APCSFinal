@@ -12,7 +12,7 @@ public class PlayerOneSelect extends StageType {
 
 	private PImage playerMenuBackground, smurfPic, animePic, trumpPic;
 	protected Button title;
-	protected boolean smurf, anime, trump;
+	private boolean smurf, anime, trump;
 	private User u;
 
 	public PlayerOneSelect(PApplet p) {
@@ -49,7 +49,6 @@ public class PlayerOneSelect extends StageType {
 
 		if (u == null && DrawingSurface.p1.getUser() != null) {
 			u = DrawingSurface.p1.getUser();
-			System.out.println("1: " + u.getName() + ": " + u.getImages());
 			smurf = u.getImages().contains("Smurf");
 			anime = u.getImages().contains("Anime");
 			trump = u.getImages().contains("Trump");

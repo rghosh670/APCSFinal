@@ -1,8 +1,0 @@
-name: Jason Zhu
-images: Anime, Trump
-weapons: rifle
-points: 100
-patience: 3
-attack time: 0.2
-offense: 3
-defense: 4

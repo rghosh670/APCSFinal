@@ -36,6 +36,9 @@ public class Rifle extends Firearm {
 			riflePic = originalRiflePic.get(0, 0, width, height / 2);
 
 		super.setGunImage(riflePic);
+
+		super.setDamage(2);
+
 		if (!player.getFRIncrease())
 			super.setFireRateMax(normalFireRateMax);
 

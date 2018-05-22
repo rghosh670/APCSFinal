@@ -4,6 +4,9 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PFont;
 import processing.core.PShapeSVG.Font;
+
+import java.util.Scanner;
+
 import data.User;
 import enums.MenuState;
 import enums.StageState;
@@ -19,7 +22,7 @@ import main.Main;
  */
 public class TextBox {
 
-	private float x, y, width, height;		
+	private float x, y, width, height;
 	private String text;
 	private PApplet p;
 	private static boolean lastKey, foundUser;
@@ -50,7 +53,6 @@ public class TextBox {
 
 		p.text(text, x, y - 37);
 
-		
 		if (p.keyPressed && !lastKey) {
 			lastKey = true;
 			if (p.key == PConstants.BACKSPACE) {
@@ -63,7 +65,8 @@ public class TextBox {
 				if (u != null) {
 					DrawingSurface.background.setMenu(MenuState.MAIN_MENU);
 					DrawingSurface.background.setIsStage(false);
-				} else text = "Please enter your name: \n\n";
+				} else
+					text = "Please enter your name: \n\n";
 			} else if (p.key != PConstants.CONTROL && p.key != PConstants.ALT && p.key != PConstants.SHIFT
 					&& p.key >= 32 && p.key <= 122) {
 				text += (p.key + "").toUpperCase();

@@ -46,26 +46,9 @@ public class DrawingSurface extends PApplet {
 		p1.setOpponent(p2);
 		p2.setOpponent(p1);
 
-		// p1 = p1.getPlayerType();
-		// p2 = p2.getPlayerType();
-		
-		StageType.resetPlayers();
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-//		knife = new Knife(p1.getHandPosition()[0], p1.getHandPosition()[1], p1.getHeight() / 2, (float) (Math.PI / 3),
-//				this);
-//		blade = new Blade(p1.getHandPosition()[0], p1.getHandPosition()[1], p1.getHeight() / 2, (float) (Math.PI / 3));
-=======
-=======
->>>>>>> parent of ce9b71e... Bullets do damage now
-=======
->>>>>>> parent of ce9b71e... Bullets do damage now
 		knife = new Knife(p1.getHandPosition()[0], p1.getHandPosition()[1], p1.getHeight() / 2, (float) (Math.PI / 3),
 				this);
 		blade = new Blade(p1.getHandPosition()[0], p1.getHandPosition()[1], p1.getHeight() / 2, (float) (Math.PI / 3));
->>>>>>> parent of ce9b71e... Bullets do damage now
 
 		keys = new ArrayList<Integer>();
 		noFill();
@@ -73,16 +56,16 @@ public class DrawingSurface extends PApplet {
 
 	public void setUser1(User u) {
 		p1.setUser(u);
-//		this.user1 = u;
+		// this.user1 = u;
 	}
-	
+
 	public void setUser2(User u) {
 		p2.setUser(u);
-//		this.user2 = u;
+		// this.user2 = u;
 	}
 
 	public void settings() {
-//		fullScreen();
+		fullScreen();
 	}
 
 	public void draw() {
@@ -95,10 +78,10 @@ public class DrawingSurface extends PApplet {
 
 			// knife.moveTo(p1.getHandPosition()[0], p1.getHandPosition()[1]);
 			// knife.draw(this);
-//			if (knife.intersects(p2.getHitbox()) != null) {
-//				ellipse(knife.intersects(p2.getHitbox())[0], knife.intersects(p2.getHitbox())[1], 5, 5);
-//				System.out.println("hit");
-//			}
+			if (knife.intersects(p2.getHitbox()) != null) {
+				ellipse(knife.intersects(p2.getHitbox())[0], knife.intersects(p2.getHitbox())[1], 5, 5);
+				System.out.println("hit");
+			}
 		}
 
 		setFieldElements();
@@ -339,25 +322,4 @@ public class DrawingSurface extends PApplet {
 			p2.setBottom(p2.getOriginalBottom());
 		}
 	}
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-	public static void changePlayers(Player player, PlayerState ps) {
-		player = player.getPlayerType();
-		
-=======
-	public static void changePlayers(Player player, PlayerState ps) {;
-		player = player.getPlayerType();
->>>>>>> parent of ce9b71e... Bullets do damage now
-=======
-	public static void changePlayers(Player player, PlayerState ps) {;
-		player = player.getPlayerType();
->>>>>>> parent of ce9b71e... Bullets do damage now
-=======
-	public static void changePlayers(Player player, PlayerState ps) {;
-		player = player.getPlayerType();
->>>>>>> parent of ce9b71e... Bullets do damage now
-	}
-
 }

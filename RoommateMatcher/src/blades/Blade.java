@@ -3,9 +3,7 @@ package blades;
 
 import java.awt.geom.Point2D;
 
-import character.Hitbox;
 import character.Hitboxable;
-import character.Player;
 import processing.core.PApplet;
 /**
  * 
@@ -21,16 +19,13 @@ public class Blade implements Hitboxable {
 	protected float x1, y1, x2, y2;
 	private float a, b, c, d;
 	protected PApplet drawer;
-	private Player player;
 	public int count = 0;
 	
-	public Blade(float x, float y, float length, float angle, PApplet p, Player player) {
+	public Blade(float x, float y, float length, float angle) {
 		this.angle = angle;
 		this.length = length;
 		this.x1 = x;
 		this.y1 = y;
-		this.player = player;
-		this.drawer = p;
 		this.x2 = (float) (x + length * Math.cos(angle));
 		this.y2 = (float) (y - length * Math.sin(angle));
 		a = 100;
@@ -63,33 +58,14 @@ public class Blade implements Hitboxable {
 		return null;
 	}
 	
-	public Point2D.Float intersects(Hitbox other) {
-		// drawer.ellipse((float) (x1+length*Math.cos(angle)), (float)
-		// (y1-length/2+length*Math.sin(angle)), 10, 10);
-		float intX = -1, intY = -1;
-		float pointX = (float) (x1 + length * Math.cos(angle));
-		float pointY = (float) (y1 - length / 2 + length * Math.sin(angle));
-		if (pointX > other.x && pointX < other.x + other.width && pointY > other.y && pointY < other.y + other.height) {
-			intX = other.x;
-			intY = pointY;
-		}
-		if (intX > -1 && intY > -1) {
-			return new Point2D.Float(intX, intY);
-		}
-		return null;
-	}
-	
-	public void draw() {
+	public void draw(PApplet drawer) {
+		this.drawer = drawer;
 //		drawer.stroke(0);
 //		drawer.strokeWeight(2f);
 //		drawer.line(x1, y1, x2, y2);
 		if (drawer.keyPressed && drawer.key == 's') {
 			System.out.println("s called");
 			swing();
-		}
-		if (intersects(player.getOpponent().getHitbox()) != null) {
-			drawer.ellipse((float) (intersects(player.getOpponent().getHitbox()).getX()), (float) (intersects(player.getOpponent().getHitbox()).getY()), 5, 5);
-			System.out.println("hit");
 		}
 	}
 	

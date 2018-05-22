@@ -1,8 +1,0 @@
-name: Justin Yim
-images: Smurf
-weapons: shotgun
-points: 100.0
-patience: 3
-attack time: 1
-offense: 9.0
-defense: 2.0
