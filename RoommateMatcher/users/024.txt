@@ -1,0 +1,8 @@
+name: Rom Waisbort
+images: Anime
+weapons: Shotgun
+points: 100
+patience: 3.5
+attack time: 1
+offense: 5
+defense: 4

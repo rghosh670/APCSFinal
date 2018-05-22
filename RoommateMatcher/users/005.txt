@@ -1,0 +1,8 @@
+name: Shaylan Dias
+images: Trump, Smurf
+weapons: Gun
+points: 100.0
+patience: 2.5
+attack time: 0.5
+offense: 9.0
+defense: 2.0

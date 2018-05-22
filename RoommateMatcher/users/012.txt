@@ -1,0 +1,8 @@
+name: Agneesh Kumar
+images: Smurf
+weapons: knife
+points: 100
+patience: 5.5
+attack time: 1
+offense: 4
+defense: 9

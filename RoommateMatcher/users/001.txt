@@ -1,0 +1,8 @@
+name: Prateek Anand
+images: Smurf, Trump
+weapons: knife
+offense: 7.0
+defense: 5.0
+patience: 5.5
+attack time: 1.0
+points: 100.0

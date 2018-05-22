@@ -1,0 +1,8 @@
+name: Sasha Oberman
+images: Smurf, Anime
+weapons: Shotgun
+points: 100
+patience: 3.5
+attack time: 1
+offense: 8
+defense: 8
