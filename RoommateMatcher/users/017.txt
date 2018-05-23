@@ -1,5 +1,5 @@
 name: Kush Patel
-images: Anime, Smurf
+images: Smurf, Anime, Trump
 weapons: rifle
 offense: 9.0
 defense: -35.0

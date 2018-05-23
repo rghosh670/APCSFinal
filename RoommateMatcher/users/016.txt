@@ -1,5 +1,5 @@
 name: Sasha Oberman
-images: Smurf, Anime
+images: Smurf, Anime, Trump
 weapons: Shotgun
 offense: 8.0
 defense: -227.0

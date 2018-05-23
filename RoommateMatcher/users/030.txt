@@ -1,5 +1,5 @@
 name: Leo Zheng
-images: Trump
+images: Smurf, Anime, Trump
 weapons: Shotgun
 points: 100
 patience: 4

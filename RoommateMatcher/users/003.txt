@@ -1,5 +1,5 @@
 name: Maxim Bravo
-images: Smurf
+images: Smurf, Anime, Trump
 weapons: gun
 offense: 5.0
 defense: -499.5

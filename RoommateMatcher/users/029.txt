@@ -1,5 +1,5 @@
 name: Johnry Zhao
-images: Smurf, Anime
+images: Smurf, Anime, Trump
 weapons: blade
 points: 100
 patience: 3.5

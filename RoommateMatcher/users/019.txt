@@ -1,5 +1,5 @@
 name: Anushka Saran
-images: Smurf
+images: Smurf, Anime, Trump
 weapons: sword
 offense: 9.0
 defense: -261.5

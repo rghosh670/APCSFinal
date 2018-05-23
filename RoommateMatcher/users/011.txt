@@ -1,5 +1,5 @@
 name: Charles Hu
-images: Trump
+images: Smurf, Anime, Trump
 weapons: rifle
 offense: 8.0
 defense: -56.0

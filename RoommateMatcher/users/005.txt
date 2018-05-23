@@ -1,5 +1,5 @@
 name: Shaylan Dias
-images: Trump, Smurf
+images: Smurf, Anime, Trump
 weapons: Gun
 offense: 9.0
 defense: -294.5

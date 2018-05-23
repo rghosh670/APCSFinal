@@ -1,5 +1,5 @@
 name: Atiq Sujela
-images: Trump
+images: Smurf, Anime, Trump
 weapons: rifle
 points: 100
 patience: 3.5

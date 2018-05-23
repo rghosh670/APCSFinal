@@ -1,5 +1,5 @@
 name: Emily Yao
-images: anime
+images: Smurf, Anime, Trump
 weapons: knife
 points: 100
 patience: 5

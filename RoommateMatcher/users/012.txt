@@ -1,5 +1,5 @@
 name: Agneesh Kumar
-images: Smurf
+images: Smurf, Anime, Trump
 weapons: knife
 offense: 4.0
 defense: -625.0

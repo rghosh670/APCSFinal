@@ -1,5 +1,5 @@
 name: Lily Li
-images: Trump
+images: Smurf, Anime, Trump
 weapons: Rifle
 offense: 3.0
 defense: -1029.0
