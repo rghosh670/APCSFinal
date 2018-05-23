@@ -23,7 +23,7 @@ public class Sword extends Blade {
 		swordPic.resize((int) width, (int) height);
 
 		super.setBladePic(swordPic);
-		super.setDamage(30);
+		super.setDamage(20);
 	}
 
 }

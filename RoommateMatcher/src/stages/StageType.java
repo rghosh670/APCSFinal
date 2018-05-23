@@ -1,7 +1,6 @@
 package stages;
 
 import character.Player;
-import character.Player2;
 import fieldElements.PowerUp;
 import fieldElements.PowerUpBulletSpeed;
 import fieldElements.PowerUpFireRate;

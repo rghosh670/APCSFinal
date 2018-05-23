@@ -68,6 +68,9 @@ public class Player implements Hitboxable {
 	protected boolean isKnife;
 	protected boolean isGun;
 
+	protected int gunSwitchCooldown, bladeSwitchCooldown;
+	protected boolean gunSwitchCooldownBool, bladeSwitchCooldownBool;
+
 	protected PlayerState ps;
 
 	public Player(PApplet p) {
@@ -171,6 +174,9 @@ public class Player implements Hitboxable {
 
 			rifle.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
 			shotgun.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
+
+			knifeSwitchCooldown();
+			gunSwitchCooldown();
 
 			if (isGun) {
 				if (isRifle)
@@ -357,10 +363,6 @@ public class Player implements Hitboxable {
 		return shotgun;
 	}
 
-	public void setIsRifle(boolean ir) {
-		isRifle = ir;
-	}
-
 	public void increaseSpeed() {
 		speed_x += .25;
 		System.out.println(speed_x);
@@ -536,16 +538,50 @@ public class Player implements Hitboxable {
 			return sword;
 	}
 
-	public void setIsKnife(boolean ik) {
-		isKnife = ik;
-	}
-
 	public void setIsGun(boolean ig) {
 		isGun = ig;
 	}
 
 	public boolean getIsGun() {
 		return isGun;
+	}
+
+	//////////////////////////////////////////////////////////////////////////////////////
+	public void toggleIsRifle() {
+		if (!gunSwitchCooldownBool) {
+			isRifle = !isRifle;
+			gunSwitchCooldownBool = true;
+			gunSwitchCooldown();
+		}
+	}
+
+	public void toggleIsKnife() {
+		if (!bladeSwitchCooldownBool) {
+			isKnife = !isKnife;
+			bladeSwitchCooldownBool = true;
+			knifeSwitchCooldown();
+		}
+	}
+
+	private void knifeSwitchCooldown() {
+		if (bladeSwitchCooldownBool)
+			bladeSwitchCooldown++;
+
+		if (bladeSwitchCooldown > 10) {
+			bladeSwitchCooldownBool = false;
+			bladeSwitchCooldown = 0;
+		}
+	}
+
+	private void gunSwitchCooldown() {
+		if (gunSwitchCooldownBool) {
+			gunSwitchCooldown++;
+		}
+
+		if (gunSwitchCooldown > 10) {
+			gunSwitchCooldownBool = false;
+			gunSwitchCooldown = 0;
+		}
 	}
 
 }

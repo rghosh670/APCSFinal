@@ -6,8 +6,6 @@ import java.util.ArrayList;
 import blades.Blade;
 import blades.Knife;
 import character.Player;
-import character.Player2;
-import character.Player3;
 import data.User;
 import enums.PlayerState;
 import enums.StageState;
@@ -104,24 +102,15 @@ public class DrawingSurface extends PApplet {
 			else
 				p1.jump();
 		}
-		if (isPressed(KeyEvent.VK_SLASH)) {
-			p1.setIsRifle(false);
+		if (isPressed(KeyEvent.VK_COMMA)) {
 			p1.setIsGun(true);
+			p1.toggleIsRifle();
 		}
-		if (isPressed(KeyEvent.VK_PERIOD)) {
-			p1.setIsRifle(true);
-			p1.setIsGun(true);
-		}
-		if (isPressed(KeyEvent.VK_SEMICOLON)) {
-			p1.setIsKnife(false);
+		if (isPressed(KeyEvent.VK_M)) {
+			p1.toggleIsKnife();
 			p1.setIsGun(false);
 		}
-		if (isPressed(KeyEvent.VK_QUOTE)) {
-			p1.setIsKnife(true);
-			p1.setIsGun(false);
-
-		}
-		if (isPressed(KeyEvent.VK_M) && !p1.getGun().getJustFired()) {
+		if (isPressed(KeyEvent.VK_PERIOD) && !p1.getGun().getJustFired()) {
 			p1.shoot();
 			p1.getGun().setJustFired(true);
 		}
@@ -146,19 +135,11 @@ public class DrawingSurface extends PApplet {
 				p2.jump();
 		}
 		if (isPressed(KeyEvent.VK_Q)) {
-			p2.setIsRifle(false);
+			p2.toggleIsRifle();
 			p2.setIsGun(true);
 		}
 		if (isPressed(KeyEvent.VK_E)) {
-			p2.setIsRifle(true);
-			p2.setIsGun(true);
-		}
-		if (isPressed(KeyEvent.VK_B)) {
-			p2.setIsKnife(true);
-			p2.setIsGun(false);
-		}
-		if (isPressed(KeyEvent.VK_V)) {
-			p2.setIsKnife(false);
+			p2.toggleIsKnife();
 			p2.setIsGun(false);
 		}
 		if (isPressed(KeyEvent.VK_F) && !p2.getGun().getJustFired()) {
