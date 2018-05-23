@@ -16,7 +16,7 @@ import stages.Stage;
 import stages.StageType;
 
 /**
- * This class models a playable character
+ * This class models a surface on which the game is drawn
  * 
  * @author ksrinivas788
  *
@@ -79,6 +79,9 @@ public class Player implements Hitboxable {
 	}
 
 	public Player(PApplet p, int xPos, int yPos, PlayerState ps, Player opponent) {
+		System.out.println(
+				">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PLAYER CREATED <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+
 		this.p = p;
 		this.x = xPos + 30;
 		this.y = yPos;
@@ -96,6 +99,13 @@ public class Player implements Hitboxable {
 
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		bottom = originalBottom;
+
+		// try {
+		// DrawingSurface.p1.setOpponent(DrawingSurface.p2);
+		// DrawingSurface.p2.setOpponent(DrawingSurface.p1);
+		// } catch (NullPointerException e) {
+		//
+		// }
 
 		selfResetPoint = this;
 	}
@@ -439,15 +449,20 @@ public class Player implements Hitboxable {
 
 	public void increaseSpeed() {
 		speed_x += .25;
+		System.out.println(speed_x);
 	}
 
 	public void getShot(Player other) {
 
+<<<<<<< HEAD
+=======
+	
+>>>>>>> branch 'master' of https://github.com/rghosh670/APCSFinal.git
 		if (!justHit && health > other.getGun().getDamage()) {
 			health -= other.getGun().getDamage();
+			other.getUser().changeOffense(0.1);
 			justHit = true;
 		} else if (health <= other.getGun().getDamage()) {
-
 			health = 0;
 			alive = false;
 			DrawingSurface.gameOver = true;
