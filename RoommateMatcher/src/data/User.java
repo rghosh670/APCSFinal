@@ -61,6 +61,10 @@ public class User {
 	public void changeOffense(double change) {
 		values.put("offense", values.get("offense") + change);
 	}
+	
+	public void changePatience(double change) {
+		values.put("patience", values.get("patience") + change);
+	}
 
 	public String getId() {
 		return this.id;

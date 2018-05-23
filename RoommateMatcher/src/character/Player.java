@@ -79,9 +79,6 @@ public class Player implements Hitboxable {
 	}
 
 	public Player(PApplet p, int xPos, int yPos, PlayerState ps, Player opponent) {
-		System.out.println(
-				">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PLAYER CREATED <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-
 		this.p = p;
 		this.x = xPos + 30;
 		this.y = yPos;
@@ -96,17 +93,10 @@ public class Player implements Hitboxable {
 		health = 100;
 		healthBar = new HealthBar(p, this);
 		alive = true;
+		numJumps = 0;
 
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		bottom = originalBottom;
-
-		// try {
-		// DrawingSurface.p1.setOpponent(DrawingSurface.p2);
-		// DrawingSurface.p2.setOpponent(DrawingSurface.p1);
-		// } catch (NullPointerException e) {
-		//
-		// }
-
 		selfResetPoint = this;
 	}
 
@@ -273,6 +263,7 @@ public class Player implements Hitboxable {
 			p.popStyle();
 		} else {
 			user.changeDefense(-0.5);
+			user.changePatience(-numJumps/30);
 			user.writeToFile();
 		}
 	}
@@ -453,12 +444,7 @@ public class Player implements Hitboxable {
 	}
 
 	public void getShot(Player other) {
-
-<<<<<<< HEAD
-=======
-	
->>>>>>> branch 'master' of https://github.com/rghosh670/APCSFinal.git
-		if (!justHit && health > other.getGun().getDamage()) {
+	if (!justHit && health > other.getGun().getDamage()) {
 			health -= other.getGun().getDamage();
 			other.getUser().changeOffense(0.1);
 			justHit = true;
