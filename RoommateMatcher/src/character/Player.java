@@ -66,6 +66,7 @@ public class Player implements Hitboxable {
 	protected Knife knife;
 	protected Sword sword;
 	protected boolean isKnife;
+	protected boolean isGun;
 
 	protected PlayerState ps;
 
@@ -74,8 +75,9 @@ public class Player implements Hitboxable {
 	}
 
 	public Player(PApplet p, int xPos, int yPos, PlayerState ps, Player opponent) {
-		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PLAYER CREATED <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-		
+		System.out.println(
+				">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PLAYER CREATED <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+
 		this.p = p;
 		this.x = xPos + 30;
 		this.y = yPos;
@@ -113,13 +115,13 @@ public class Player implements Hitboxable {
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		bottom = originalBottom;
 
-//		try {
-//			DrawingSurface.p1.setOpponent(DrawingSurface.p2);
-//			DrawingSurface.p2.setOpponent(DrawingSurface.p1);
-//		} catch (NullPointerException e) {
-//
-//		}
-		
+		// try {
+		// DrawingSurface.p1.setOpponent(DrawingSurface.p2);
+		// DrawingSurface.p2.setOpponent(DrawingSurface.p1);
+		// } catch (NullPointerException e) {
+		//
+		// }
+
 		selfResetPoint = this;
 	}
 
@@ -130,11 +132,13 @@ public class Player implements Hitboxable {
 	public void setOpponent(Player other) {
 		opponent = other;
 		System.out.println("opponent set: " + opponent);
-//		if (opponent == null) System.out.println("Still null                                                               <<");
-//		if (opponent != null) System.out.println(this.getUser().getName() + " opponent set: " + opponent.getUser().getName() + "            <<");
-//		System.out.println(this.getUser().getName() + " opponent set: " + (opponent == null) + "            <<");
+		// if (opponent == null) System.out.println("Still null <<");
+		// if (opponent != null) System.out.println(this.getUser().getName() + "
+		// opponent set: " + opponent.getUser().getName() + " <<");
+		// System.out.println(this.getUser().getName() + " opponent set: " + (opponent
+		// == null) + " <<");
 	}
-	
+
 	public Player getOpponent() {
 		return opponent;
 	}
@@ -142,7 +146,7 @@ public class Player implements Hitboxable {
 	public User getUser() {
 		return user;
 	}
-	
+
 	public Player getPlayerType() {
 		return selfResetPoint;
 	}
@@ -152,35 +156,34 @@ public class Player implements Hitboxable {
 		alive = (health > 0);
 
 		if (alive) {
-		p.pushMatrix();
-		p.pushStyle();
+			p.pushMatrix();
+			p.pushStyle();
 
-		fall();
-		fall();
-		fall();
-		act();
+			fall();
+			fall();
+			fall();
+			act();
 
-		hitbox.updateCoordinates();
-		display_the_sprite();
+			hitbox.updateCoordinates();
+			display_the_sprite();
 
-		p.frameRate(30);
+			p.frameRate(30);
 
-		rifle.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
-		shotgun.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
+			rifle.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
+			shotgun.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
 
-		if (isRifle)
-			rifle.draw();
-		else
-			shotgun.draw();
-		if (isRifle)
-			rifle.draw();
-		else
-			shotgun.draw();
+			if (isGun) {
+				if (isRifle)
+					rifle.draw();
+				else
+					shotgun.draw();
 
-		if (isKnife)
-			knife.draw();
-		else
-			sword.draw();
+			} else {
+				if (isKnife)
+					knife.draw();
+				else
+					sword.draw();
+			}
 
 			healthBar.draw();
 
@@ -234,7 +237,7 @@ public class Player implements Hitboxable {
 	}
 
 	public void shoot() {
-		if (!DrawingSurface.gameOver) {
+		if (!DrawingSurface.gameOver && isGun) {
 			getGun().setBulletIndex(getGun().getBulletIndex() % 20);
 			getGun().getBullets()[getGun().getBulletIndex()] = new Bullet(p, this, getGun().getBulletSpeed());
 			getGun().setBulletIndex(getGun().getBulletIndex() + 1);
@@ -396,7 +399,7 @@ public class Player implements Hitboxable {
 	}
 
 	public void getCut(Player other) {
-		if (StageType.inGame) {
+		if (StageType.inGame && !other.getIsGun()) {
 			if (!justHit && health > other.getBlade().getDamage()) {
 				health -= other.getBlade().getDamage();
 				justHit = true;
@@ -531,6 +534,18 @@ public class Player implements Hitboxable {
 			return knife;
 		} else
 			return sword;
+	}
+
+	public void setIsKnife(boolean ik) {
+		isKnife = ik;
+	}
+
+	public void setIsGun(boolean ig) {
+		isGun = ig;
+	}
+
+	public boolean getIsGun() {
+		return isGun;
 	}
 
 }

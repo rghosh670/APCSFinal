@@ -48,7 +48,8 @@ public class DrawingSurface extends PApplet {
 		deathScreen.resize(width, height);
 
 		p1 = new Player(this, 0, height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME, null);
-		p2 = new Player(this, (int) (width * .8), height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME, null);
+		p2 = new Player(this, (int) (width * .8), height - (int) background.getStageType().getGround() - 40,
+				PlayerState.ANIME, null);
 		p1.setOpponent(p2);
 		p2.setOpponent(p1);
 
@@ -103,10 +104,23 @@ public class DrawingSurface extends PApplet {
 			else
 				p1.jump();
 		}
-		if (isPressed(KeyEvent.VK_SLASH))
+		if (isPressed(KeyEvent.VK_SLASH)) {
 			p1.setIsRifle(false);
-		if (isPressed(KeyEvent.VK_PERIOD))
+			p1.setIsGun(true);
+		}
+		if (isPressed(KeyEvent.VK_PERIOD)) {
 			p1.setIsRifle(true);
+			p1.setIsGun(true);
+		}
+		if (isPressed(KeyEvent.VK_SEMICOLON)) {
+			p1.setIsKnife(false);
+			p1.setIsGun(false);
+		}
+		if (isPressed(KeyEvent.VK_QUOTE)) {
+			p1.setIsKnife(true);
+			p1.setIsGun(false);
+
+		}
 		if (isPressed(KeyEvent.VK_M) && !p1.getGun().getJustFired()) {
 			p1.shoot();
 			p1.getGun().setJustFired(true);
@@ -131,10 +145,22 @@ public class DrawingSurface extends PApplet {
 			else
 				p2.jump();
 		}
-		if (isPressed(KeyEvent.VK_Q))
+		if (isPressed(KeyEvent.VK_Q)) {
 			p2.setIsRifle(false);
-		if (isPressed(KeyEvent.VK_E))
+			p2.setIsGun(true);
+		}
+		if (isPressed(KeyEvent.VK_E)) {
 			p2.setIsRifle(true);
+			p2.setIsGun(true);
+		}
+		if (isPressed(KeyEvent.VK_B)) {
+			p2.setIsKnife(true);
+			p2.setIsGun(false);
+		}
+		if (isPressed(KeyEvent.VK_V)) {
+			p2.setIsKnife(false);
+			p2.setIsGun(false);
+		}
 		if (isPressed(KeyEvent.VK_F) && !p2.getGun().getJustFired()) {
 			p2.shoot();
 			p2.getGun().setJustFired(true);

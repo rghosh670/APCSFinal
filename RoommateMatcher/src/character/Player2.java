@@ -127,15 +127,18 @@ public class Player2 extends Player implements Hitboxable {
 		rifle.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
 		shotgun.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
 
-		if (isRifle)
-			rifle.draw();
-		else
-			shotgun.draw();
+		if (isGun) {
+			if (isRifle)
+				rifle.draw();
+			else
+				shotgun.draw();
 
-		if (isKnife)
-			knife.draw();
-		else
-			sword.draw();
+		} else {
+			if (isKnife)
+				knife.draw();
+			else
+				sword.draw();
+		}
 
 		healthBar.draw();
 
@@ -199,16 +202,6 @@ public class Player2 extends Player implements Hitboxable {
 	public void moveDown() {
 		if (!DrawingSurface.gameOver)
 			y = (y < p.height - DrawingSurface.background.getStageType().getGround() - height) ? y += speed_x : y;
-	}
-
-	public void shoot() {
-		if (!DrawingSurface.gameOver) {
-			getGun().setBulletIndex(getGun().getBulletIndex() % 20);
-			getGun().getBullets()[getGun().getBulletIndex()] = new Bullet(p, this, getGun().getBulletSpeed());
-			getGun().setBulletIndex(getGun().getBulletIndex() + 1);
-			getGun().getBullets()[getGun().getBulletIndex() - 1].shoot();
-			this.getGun().setJustFired(true);
-		}
 	}
 
 	public void jump() {
@@ -341,17 +334,6 @@ public class Player2 extends Player implements Hitboxable {
 			health -= other.getGun().getDamage();
 			justHit = true;
 		} else if (health <= other.getGun().getDamage()) {
-			health = 0;
-			alive = false;
-			DrawingSurface.gameOver = true;
-		}
-	}
-
-	public void getCut(Player other) {
-		if (!justHit && health > other.getBlade().getDamage()) {
-			health -= other.getBlade().getDamage();
-			justHit = true;
-		} else if (health <= other.getBlade().getDamage()) {
 			health = 0;
 			alive = false;
 			DrawingSurface.gameOver = true;

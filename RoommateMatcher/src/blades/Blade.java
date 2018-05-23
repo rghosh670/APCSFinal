@@ -52,13 +52,20 @@ public class Blade implements Hitboxable {
 			bladePic = rightBladePic;
 		}
 
-		if (this instanceof Knife)
-			hitbox.updateCoordinates(x, y + p.height / 12);
-		else {
-			if (left) {
-				hitbox.updateCoordinates(x - bladePic.width / 2, y + p.height / 16);
+		if (this instanceof Knife) {
+			if (player.getIsFacingLeft()) {
+				hitbox.updateCoordinates(x - width / 3, y + p.height / 12);
+			} else {
+				hitbox.updateCoordinates(x, y + (p.height / 11f));
+			}
+		} else {
+			if (player.getIsFacingLeft()) {
+				hitbox.updateCoordinates(x - (p.width / 36), y + (p.height / 22.5f));
 			} else
-				hitbox.updateCoordinates(x, y);
+				hitbox.updateCoordinates(x, y + (p.height / 22.5f));
+
+			hitbox.setHeight(.75f * (height / 2 - height / 3));
+
 		}
 
 		if (bladePic != null)
