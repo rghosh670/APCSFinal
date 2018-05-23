@@ -47,9 +47,10 @@ public class DrawingSurface extends PApplet {
 		deathScreen = loadImage("stageImages" + Stage.fileSeparator + "BlackScreen.jpg");
 		deathScreen.resize(width, height);
 
-		p1 = new Player(user1, this, 0, height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME);
-		p2 = new Player(user2, this, (int) (width * .8), height - (int) background.getStageType().getGround() - 40,
-				PlayerState.ANIME);
+		p1 = new Player(this, 0, height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME, null);
+		p2 = new Player(this, (int) (width * .8), height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME, null);
+		p1.setOpponent(p2);
+		p2.setOpponent(p1);
 
 		keys = new ArrayList<Integer>();
 

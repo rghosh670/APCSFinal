@@ -62,7 +62,7 @@ public class Player implements Hitboxable {
 	protected int fireRateIncrease, bulletSpeedIncrease;
 	protected boolean frIncrease, bsIncrease;
 
-	protected Player opponent;
+	protected Player opponent, selfResetPoint;
 	protected Knife knife;
 	protected Sword sword;
 	protected boolean isKnife;
@@ -70,11 +70,12 @@ public class Player implements Hitboxable {
 	protected PlayerState ps;
 
 	public Player(PApplet p) {
-		this(null, p, 0, 0, PlayerState.SMURF);
+		this(p, 0, 0, PlayerState.SMURF, null);
 	}
 
-	public Player(User u, PApplet p, int xPos, int yPos, PlayerState ps) {
-		this.user = u;
+	public Player(PApplet p, int xPos, int yPos, PlayerState ps, Player opponent) {
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PLAYER CREATED <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+		
 		this.p = p;
 		this.x = xPos + 30;
 		this.y = yPos;
@@ -112,12 +113,14 @@ public class Player implements Hitboxable {
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		bottom = originalBottom;
 
-		try {
-			DrawingSurface.p1.setOpponent(DrawingSurface.p2);
-			DrawingSurface.p2.setOpponent(DrawingSurface.p1);
-		} catch (NullPointerException e) {
-
-		}
+//		try {
+//			DrawingSurface.p1.setOpponent(DrawingSurface.p2);
+//			DrawingSurface.p2.setOpponent(DrawingSurface.p1);
+//		} catch (NullPointerException e) {
+//
+//		}
+		
+		selfResetPoint = this;
 	}
 
 	public void setUser(User u) {
@@ -125,32 +128,30 @@ public class Player implements Hitboxable {
 	}
 
 	public void setOpponent(Player other) {
-		this.opponent = other;
+		opponent = other;
 		System.out.println("opponent set: " + opponent);
+//		if (opponent == null) System.out.println("Still null                                                               <<");
+//		if (opponent != null) System.out.println(this.getUser().getName() + " opponent set: " + opponent.getUser().getName() + "            <<");
+//		System.out.println(this.getUser().getName() + " opponent set: " + (opponent == null) + "            <<");
+	}
+	
+	public Player getOpponent() {
+		return opponent;
 	}
 
 	public User getUser() {
 		return user;
 	}
-
+	
 	public Player getPlayerType() {
-		switch (ps) {
-		case SMURF:
-			return new Player(user, p, x, y, PlayerState.SMURF);
-		case ANIME:
-			return new Player2(user, p, x, y);
-		case TRUMP:
-			return new Player3(user, p, x, y);
-		default:
-			return new Player3(user, p, x, y);
-		}
+		return selfResetPoint;
 	}
 
 	public void draw() {
-		System.out.println(ps);
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		alive = (health > 0);
 
+		if (alive) {
 		p.pushMatrix();
 		p.pushStyle();
 
@@ -171,18 +172,21 @@ public class Player implements Hitboxable {
 			rifle.draw();
 		else
 			shotgun.draw();
+		if (isRifle)
+			rifle.draw();
+		else
+			shotgun.draw();
 
 		if (isKnife)
 			knife.draw();
 		else
 			sword.draw();
 
-		healthBar.draw();
+			healthBar.draw();
 
-		p.popMatrix();
-		p.popStyle();
-
-		if (alive) {
+			p.popMatrix();
+			p.popStyle();
+		} else {
 			user.changeDefense(-0.5);
 			user.writeToFile();
 		}

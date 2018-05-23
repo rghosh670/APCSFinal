@@ -2,7 +2,7 @@ name: Charles Hu
 images: Trump
 weapons: rifle
 offense: 8.0
-defense: -117.5
+defense: -56.0
 patience: 5.5
 attack time: 1.0
 points: 100.0

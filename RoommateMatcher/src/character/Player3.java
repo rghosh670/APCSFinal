@@ -59,12 +59,11 @@ public class Player3 extends Player implements Hitboxable {
 	private boolean frIncrease, bsIncrease;
 
 	public Player3(PApplet p) {
-		this(null, p, 0, 0);
+		this(p, 0, 0, null);
 	}
 
-	public Player3(User u, PApplet p, int xPos, int yPos) {
-		super(u, p, xPos, yPos, PlayerState.TRUMP);
-		this.user = u;
+	public Player3(PApplet p, int xPos, int yPos, Player opponent) {
+		super(p, xPos, yPos, PlayerState.TRUMP, opponent);
 		this.p = p;
 		this.x = xPos + 30;
 		this.y = yPos;
