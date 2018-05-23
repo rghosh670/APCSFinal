@@ -48,9 +48,10 @@ public class DrawingSurface extends PApplet {
 		background = new Stage(this);
 		deathScreen = loadImage("stageImages" + Stage.fileSeparator + "BlackScreen.jpg");
 		deathScreen.resize(width, height);
-		p1 = new Player(user1, this, 0, height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME);
-		p2 = new Player(user2, this, (int) (width * .8), height - (int) background.getStageType().getGround() - 40,
-				PlayerState.ANIME);
+		p1 = new Player(this, 0, height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME, null);
+		p2 = new Player(this, (int) (width * .8), height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME, null);
+		p1.setOpponent(p2);
+		p2.setOpponent(p1);
 
 		knife = new Knife(p1.getHandPosition()[0], p1.getHandPosition()[1], p1.getHeight() / 2, (float) (Math.PI / 3),
 				this);
@@ -76,6 +77,9 @@ public class DrawingSurface extends PApplet {
 	}
 
 	public void draw() {
+		
+//		if (p1.getOpponent() == null) p1.setOpponent(p2);
+//		if (p2.getOpponent() == null) p2.setOpponent(p1);
 
 		background.draw();
 
@@ -156,7 +160,7 @@ public class DrawingSurface extends PApplet {
 		for (Bullet b : p1.getGun().getBullets()) {
 			if (b != null)
 				if (b.getHitbox().intersects(p2.getHitbox())) {
-					p2.getHit(p1);
+					p2.getHit();
 					b.disappear();
 				}
 		}
@@ -164,7 +168,7 @@ public class DrawingSurface extends PApplet {
 		for (Bullet b : p2.getGun().getBullets()) {
 			if (b != null)
 				if (b.getHitbox().intersects(p1.getHitbox())) {
-					p1.getHit(p2);
+					p1.getHit();
 					b.disappear();
 				}
 		}

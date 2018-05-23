@@ -31,7 +31,7 @@ public class Player implements Hitboxable {
 
 	private Hitbox hitbox;
 
-	private PApplet p;
+	private PApplet drawer;
 
 	private PImage[] my_sprites_right;
 	private PImage[] my_sprites_left;
@@ -58,17 +58,18 @@ public class Player implements Hitboxable {
 	protected int fireRateIncrease, bulletSpeedIncrease;
 	protected boolean frIncrease, bsIncrease;
 
-	protected Player opponent;
+	protected Player opponent, selfResetPoint;
 
 	protected PlayerState ps;
 
 	public Player(PApplet p) {
-		this(null, p, 0, 0, PlayerState.SMURF);
+		this(p, 0, 0, PlayerState.SMURF, null);
 	}
 
-	public Player(User u, PApplet p, int xPos, int yPos, PlayerState ps) {
-		this.user = u;
-		this.p = p;
+	public Player(PApplet p, int xPos, int yPos, PlayerState ps, Player opponent) {
+		System.out.println(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PLAYER CREATED <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+		
+		this.drawer = p;
 		this.x = xPos + 30;
 		this.y = yPos;
 		my_sprites_right = new PImage[TOTAL_SPRITES];
@@ -103,12 +104,14 @@ public class Player implements Hitboxable {
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		bottom = originalBottom;
 
-		try {
-			DrawingSurface.p1.setOpponent(DrawingSurface.p2);
-			DrawingSurface.p2.setOpponent(DrawingSurface.p1);
-		} catch (NullPointerException e) {
-
-		}
+//		try {
+//			DrawingSurface.p1.setOpponent(DrawingSurface.p2);
+//			DrawingSurface.p2.setOpponent(DrawingSurface.p1);
+//		} catch (NullPointerException e) {
+//
+//		}
+		
+		selfResetPoint = this;
 	}
 
 	public void setUser(User u) {
@@ -116,35 +119,32 @@ public class Player implements Hitboxable {
 	}
 
 	public void setOpponent(Player other) {
-		this.opponent = other;
+		opponent = other;
 		System.out.println("opponent set: " + opponent);
+//		if (opponent == null) System.out.println("Still null                                                               <<");
+//		if (opponent != null) System.out.println(this.getUser().getName() + " opponent set: " + opponent.getUser().getName() + "            <<");
+//		System.out.println(this.getUser().getName() + " opponent set: " + (opponent == null) + "            <<");
+	}
+	
+	public Player getOpponent() {
+		return opponent;
 	}
 
 	public User getUser() {
 		return user;
 	}
-
+	
 	public Player getPlayerType() {
-		switch (ps) {
-		case SMURF:
-			return new Player(user, p, x, y, PlayerState.SMURF);
-		case ANIME:
-			return new Player2(user, p, x, y);
-		case TRUMP:
-			return new Player3(user, p, x, y);
-		default:
-			return new Player3(user, p, x, y);
-		}
+		return selfResetPoint;
 	}
 
 	public void draw() {
-		System.out.println(ps);
-		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
+		originalBottom = drawer.height - height - DrawingSurface.background.getStageType().getGround();
 		alive = (health > 0);
 
 		if (alive) {
-		p.pushMatrix();
-		p.pushStyle();
+		drawer.pushMatrix();
+		drawer.pushStyle();
 
 		fall();
 		fall();
@@ -154,7 +154,7 @@ public class Player implements Hitboxable {
 		hitbox.updateCoordinates();
 		display_the_sprite();
 
-		p.frameRate(30);
+		drawer.frameRate(30);
 
 		rifle.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
 		shotgun.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
@@ -163,16 +163,15 @@ public class Player implements Hitboxable {
 			rifle.draw();
 		else
 			shotgun.draw();
-
-			if (isRifle)
-				rifle.draw();
-			else
-				shotgun.draw();
+		if (isRifle)
+			rifle.draw();
+		else
+			shotgun.draw();
 
 			healthBar.draw();
 
-			p.popMatrix();
-			p.popStyle();
+			drawer.popMatrix();
+			drawer.popStyle();
 		} else {
 			user.changeDefense(-0.5);
 			user.writeToFile();
@@ -184,7 +183,7 @@ public class Player implements Hitboxable {
 		if (onGround)
 			current_sprite_right++;
 		current_sprite_right %= TOTAL_SPRITES;
-		x = (x < p.width - width) ? x += speed_x : x;
+		x = (x < drawer.width - width) ? x += speed_x : x;
 
 		rifle.setLeft(isFacingLeft);
 		shotgun.setLeft(isFacingLeft);
@@ -209,12 +208,12 @@ public class Player implements Hitboxable {
 	}
 
 	public void moveDown() {
-		y = (y < p.height - DrawingSurface.background.getStageType().getGround() - height) ? y += speed_x : y;
+		y = (y < drawer.height - DrawingSurface.background.getStageType().getGround() - height) ? y += speed_x : y;
 	}
 
 	public void shoot() {
 		getGun().setBulletIndex(getGun().getBulletIndex() % 20);
-		getGun().getBullets()[getGun().getBulletIndex()] = new Bullet(p, this, getGun().getBulletSpeed());
+		getGun().getBullets()[getGun().getBulletIndex()] = new Bullet(drawer, this, getGun().getBulletSpeed());
 		getGun().setBulletIndex(getGun().getBulletIndex() + 1);
 		getGun().getBullets()[getGun().getBulletIndex() - 1].shoot();
 		this.getGun().setJustFired(true);
@@ -252,14 +251,14 @@ public class Player implements Hitboxable {
 	}
 
 	public void display_the_sprite() {
-		p.pushMatrix();
+		drawer.pushMatrix();
 
 		if (isFacingLeft)
-			p.image(my_sprites_left[current_sprite_left], x, y);
+			drawer.image(my_sprites_left[current_sprite_left], x, y);
 		else
-			p.image(my_sprites_right[current_sprite_right], x, y);
+			drawer.image(my_sprites_right[current_sprite_right], x, y);
 
-		p.popMatrix();
+		drawer.popMatrix();
 	}
 
 	private void fall() {
@@ -336,9 +335,7 @@ public class Player implements Hitboxable {
 		System.out.println(speed_x);
 	}
 
-<<<<<<< HEAD
 	public void getHit() {
-		System.out.println("................................" + opponent);
 		if (opponent != null) {
 			if (!justHit && health > opponent.getGun().getDamage()) {
 				health -= opponent.getGun().getDamage();
@@ -349,37 +346,6 @@ public class Player implements Hitboxable {
 				health = 0;
 				alive = false;
 			}
-=======
-	public void getHit(Player other) {
-		// if (opponent != null) {
-		// if (!justHit && health > opponent.getGun().getDamage()) {
-		// health -= opponent.getGun().getDamage();
-		// justHit = true;
-		// opponent.getUser().changeOffense(0.05);
-		// this.getUser().changeDefense(-0.05);
-		// } else if (health < opponent.getGun().getDamage()) {
-		// System.out.println("EEPS");
-		// health = 0;
-		// alive = false;
-		// } else {
-		// System.out.println("OPPS");
-		// while (opponent != null) {
-		// DrawingSurface.p1.setOpponent(DrawingSurface.p2);
-		// DrawingSurface.p2.setOpponent(DrawingSurface.p1);
-		// System.out.println("I cry");
-		// }
-		// }
-		// }
-
-		if (!justHit && health > other.getGun().getDamage()) {
-			health -= other.getGun().getDamage();
-			justHit = true;
-		} else if (health <= other.getGun().getDamage()) {
-			System.out.println("EEPS");
-			health = 0;
-			alive = false;
-			DrawingSurface.gameOver = true;
->>>>>>> branch 'master' of https://github.com/rghosh670/APCSFinal
 		}
 	}
 
