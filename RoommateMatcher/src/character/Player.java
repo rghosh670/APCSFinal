@@ -45,31 +45,28 @@ public class Player implements Hitboxable {
 	private final double grav = .6;
 	private boolean onGround;
 
-	private int health;
-	private boolean justHit, alive;
-	private int healthCooldown;
-	private HealthBar healthBar;
+	protected int health;
+	protected boolean justHit, alive;
+	protected int healthCooldown;
+	protected HealthBar healthBar;
 
-	private float originalBottom;
-	private float bottom;
+	protected float originalBottom;
+	protected float bottom;
 
-	private boolean inTree, onLadder, onCouch;
+	protected boolean inTree, onLadder, onCouch;
 
-	private int fireRateIncrease, bulletSpeedIncrease;
-	private boolean frIncrease, bsIncrease;
+	protected int fireRateIncrease, bulletSpeedIncrease;
+	protected boolean frIncrease, bsIncrease;
 
-	private Player opponent;
+	protected Player opponent;
 
 	protected PlayerState ps;
-
-	protected static int iterations;
 
 	public Player(PApplet p) {
 		this(null, p, 0, 0, PlayerState.SMURF);
 	}
 
 	public Player(User u, PApplet p, int xPos, int yPos, PlayerState ps) {
-		iterations++;
 		this.user = u;
 		this.p = p;
 		this.x = xPos + 30;
@@ -105,7 +102,13 @@ public class Player implements Hitboxable {
 
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		bottom = originalBottom;
-		System.out.println(iterations + " HERE I AM");
+
+		try {
+			DrawingSurface.p1.setOpponent(DrawingSurface.p2);
+			DrawingSurface.p2.setOpponent(DrawingSurface.p1);
+		} catch (NullPointerException e) {
+
+		}
 	}
 
 	public void setUser(User u) {
@@ -138,81 +141,95 @@ public class Player implements Hitboxable {
 		System.out.println(ps);
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		alive = (health > 0);
+
+		p.pushMatrix();
+		p.pushStyle();
+
+		fall();
+		fall();
+		fall();
+		act();
+
+		hitbox.updateCoordinates();
+		display_the_sprite();
+
+		p.frameRate(30);
+
+		rifle.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
+		shotgun.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
+
+		if (isRifle)
+			rifle.draw();
+		else
+			shotgun.draw();
+
+		healthBar.draw();
+
+		p.popMatrix();
+		p.popStyle();
+
 		if (alive) {
-			p.pushMatrix();
-			p.pushStyle();
-
-			fall();
-			fall();
-			act();
-
-			hitbox.updateCoordinates();
-			display_the_sprite();
-
-			p.frameRate(30);
-
-			rifle.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
-			shotgun.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
-
-			if (isRifle)
-				rifle.draw();
-			else
-				shotgun.draw();
-
-			healthBar.draw();
-
-			p.popMatrix();
-			p.popStyle();
-		} else {
 			user.changeDefense(-0.5);
 			user.writeToFile();
 		}
 	}
 
 	public void moveRight() {
-		isFacingLeft = false;
-		if (onGround)
-			current_sprite_right++;
-		current_sprite_right %= TOTAL_SPRITES;
-		x = (x < p.width - width) ? x += speed_x : x;
+		if (!DrawingSurface.gameOver) {
+			isFacingLeft = false;
+			if (onGround)
+				current_sprite_right++;
+			current_sprite_right %= TOTAL_SPRITES;
+			x = (x < p.width - width) ? x += speed_x : x;
 
-		rifle.setLeft(isFacingLeft);
-		shotgun.setLeft(isFacingLeft);
+			rifle.setLeft(isFacingLeft);
+			shotgun.setLeft(isFacingLeft);
+		}
 
 	}
 
 	public void moveLeft() {
-		isFacingLeft = true;
+		if (!DrawingSurface.gameOver) {
+			isFacingLeft = true;
 
-		rifle.setLeft(isFacingLeft);
-		shotgun.setLeft(isFacingLeft);
+			rifle.setLeft(isFacingLeft);
+			shotgun.setLeft(isFacingLeft);
 
-		if (onGround)
-			current_sprite_left++;
+			if (onGround)
+				current_sprite_left++;
 
-		current_sprite_left %= TOTAL_SPRITES;
-		x = (x > 0) ? x -= speed_x : x;
+			current_sprite_left %= TOTAL_SPRITES;
+			x = (x > 0) ? x -= speed_x : x;
+		}
 	}
 
 	public void moveUp() {
-		y = (y > -300) ? y -= speed_x : y;
+		if (!DrawingSurface.gameOver) {
+			y = (y > -300) ? y -= speed_x : y;
+		}
 	}
 
 	public void moveDown() {
-		y = (y < p.height - DrawingSurface.background.getStageType().getGround() - height) ? y += speed_x : y;
+		if (!DrawingSurface.gameOver) {
+			y = (y < p.height - DrawingSurface.background.getStageType().getGround() - height) ? y += speed_x : y;
+		}
 	}
 
 	public void shoot() {
-		getGun().setBulletIndex(getGun().getBulletIndex() % 20);
-		getGun().getBullets()[getGun().getBulletIndex()] = new Bullet(p, this, getGun().getBulletSpeed());
-		getGun().setBulletIndex(getGun().getBulletIndex() + 1);
-		getGun().getBullets()[getGun().getBulletIndex() - 1].shoot();
-		this.getGun().setJustFired(true);
+		if (!DrawingSurface.gameOver) {
+			getGun().setBulletIndex(getGun().getBulletIndex() % 20);
+			getGun().getBullets()[getGun().getBulletIndex()] = new Bullet(p, this, getGun().getBulletSpeed());
+			getGun().setBulletIndex(getGun().getBulletIndex() + 1);
+			getGun().getBullets()[getGun().getBulletIndex() - 1].shoot();
+			this.getGun().setJustFired(true);
+		}
 	}
 
 	public void jump() {
-		if (onGround)
-			yVel = -12;
+		if (!DrawingSurface.gameOver) {
+			if (onGround)
+				yVel = -12;
+		}
 	}
 
 	private void act() {
@@ -253,13 +270,15 @@ public class Player implements Hitboxable {
 	}
 
 	private void fall() {
-		if (yVel + grav < 7)
-			yVel += grav;
+		if (!DrawingSurface.gameOver) {
+			if (yVel + grav < 7)
+				yVel += grav;
 
-		if (inTree || onLadder)
-			yVel = 0;
+			if (inTree || onLadder)
+				yVel = 0;
 
-		y += yVel;
+			y += yVel;
+		}
 	}
 
 	public boolean getIsMoving() {
@@ -326,17 +345,35 @@ public class Player implements Hitboxable {
 		System.out.println(speed_x);
 	}
 
-	public void getHit() {
-		if (opponent != null) {
-			if (!justHit && health > opponent.getGun().getDamage()) {
-				health -= opponent.getGun().getDamage();
-				justHit = true;
-				opponent.getUser().changeOffense(0.05);
-				this.getUser().changeDefense(-0.05);
-			} else if (health < opponent.getGun().getDamage()) {
-				health = 0;
-				alive = false;
-			}
+	public void getHit(Player other) {
+		// if (opponent != null) {
+		// if (!justHit && health > opponent.getGun().getDamage()) {
+		// health -= opponent.getGun().getDamage();
+		// justHit = true;
+		// opponent.getUser().changeOffense(0.05);
+		// this.getUser().changeDefense(-0.05);
+		// } else if (health < opponent.getGun().getDamage()) {
+		// System.out.println("EEPS");
+		// health = 0;
+		// alive = false;
+		// } else {
+		// System.out.println("OPPS");
+		// while (opponent != null) {
+		// DrawingSurface.p1.setOpponent(DrawingSurface.p2);
+		// DrawingSurface.p2.setOpponent(DrawingSurface.p1);
+		// System.out.println("I cry");
+		// }
+		// }
+		// }
+
+		if (!justHit && health > other.getGun().getDamage()) {
+			health -= other.getGun().getDamage();
+			justHit = true;
+		} else if (health < other.getGun().getDamage()) {
+			System.out.println("EEPS");
+			health = 0;
+			alive = false;
+			DrawingSurface.gameOver = true;
 		}
 	}
 

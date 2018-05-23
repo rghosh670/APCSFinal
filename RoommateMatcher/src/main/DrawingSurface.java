@@ -34,6 +34,8 @@ public class DrawingSurface extends PApplet {
 	public static Player p2;
 	public static User user1, user2;
 
+	public static boolean gameOver;
+
 	private ArrayList<Integer> keys;
 	Knife knife;
 	Blade blade;
@@ -43,14 +45,13 @@ public class DrawingSurface extends PApplet {
 		p1 = new Player(user1, this, 0, height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME);
 		p2 = new Player(user2, this, (int) (width * .8), height - (int) background.getStageType().getGround() - 40,
 				PlayerState.ANIME);
-		p1.setOpponent(p2);
-		p2.setOpponent(p1);
 
 		knife = new Knife(p1.getHandPosition()[0], p1.getHandPosition()[1], p1.getHeight() / 2, (float) (Math.PI / 3),
 				this);
 		blade = new Blade(p1.getHandPosition()[0], p1.getHandPosition()[1], p1.getHeight() / 2, (float) (Math.PI / 3));
 
 		keys = new ArrayList<Integer>();
+
 		noFill();
 	}
 
@@ -148,7 +149,7 @@ public class DrawingSurface extends PApplet {
 		for (Bullet b : p1.getGun().getBullets()) {
 			if (b != null)
 				if (b.getHitbox().intersects(p2.getHitbox())) {
-					p2.getHit();
+					p2.getHit(p1);
 					b.disappear();
 				}
 		}
@@ -156,7 +157,7 @@ public class DrawingSurface extends PApplet {
 		for (Bullet b : p2.getGun().getBullets()) {
 			if (b != null)
 				if (b.getHitbox().intersects(p1.getHitbox())) {
-					p1.getHit();
+					p1.getHit(p2);
 					b.disappear();
 				}
 		}
@@ -321,5 +322,9 @@ public class DrawingSurface extends PApplet {
 			p1.setBottom(p1.getOriginalBottom());
 			p2.setBottom(p2.getOriginalBottom());
 		}
+	}
+
+	public static void setGameOver(boolean go) {
+		gameOver = go;
 	}
 }
