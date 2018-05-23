@@ -17,11 +17,6 @@ public class PlayerOneSelect extends StageType {
 
 	public PlayerOneSelect(PApplet p) {
 		super(p);
-//		User u = DrawingSurface.p1.getUser();
-//		smurf = u.getImages().contains("Smurf");
-//		anime = u.getImages().contains("Anime");
-//		trump = u.getImages().contains("Trump");
-//		System.out.println(smurf + ", " + anime + ", " + trump);
 		
 		playerMenuBackground = p.loadImage("stageImages" + Stage.fileSeparator + "MenuBackground.jpg");
 		playerMenuBackground.resize(p.width, p.height);
@@ -49,11 +44,12 @@ public class PlayerOneSelect extends StageType {
 
 		if (u == null && DrawingSurface.p1.getUser() != null) {
 			u = DrawingSurface.p1.getUser();
+			System.out.println("1: " + u.getName() + " " + u.getImages().toString());
 			smurf = u.getImages().contains("Smurf");
 			anime = u.getImages().contains("Anime");
 			trump = u.getImages().contains("Trump");
 		}
-		System.out.println("1: " + smurf + ", " + anime + ", " + trump);
+//		System.out.println("1: " + smurf + ", " + anime + ", " + trump);
 
 		title.draw();
 

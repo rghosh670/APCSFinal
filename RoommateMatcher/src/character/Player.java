@@ -70,6 +70,8 @@ public class Player implements Hitboxable {
 
 	protected PlayerState ps;
 
+	private PImage my_sprite_sheet_right = null, my_sprite_sheet_left = null;
+
 	public Player(PApplet p) {
 		this(p, 0, 0, PlayerState.SMURF, null);
 	}
@@ -85,24 +87,6 @@ public class Player implements Hitboxable {
 		my_sprites_left = new PImage[TOTAL_SPRITES];
 
 		this.ps = ps;
-
-		// put 1 image in the data s folder
-		PImage my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "SmurfsRight.png");
-		PImage my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "SmurfsLeft.png");
-		width = my_sprite_sheet_right.width / N_SPRITES_X;
-		height = my_sprite_sheet_right.height / N_SPRITES_Y;
-
-		int index = 0;
-
-		for (int y = 0; y < N_SPRITES_Y; y++) {
-			for (int x = 0; x < N_SPRITES_X; x++) {
-				my_sprites_right[index] = my_sprite_sheet_right.get(x * width, y * height, width, height);
-				my_sprites_left[index] = my_sprite_sheet_left.get(x * width, y * height, width, height);
-				index++;
-
-			}
-		}
-
 		hitbox = new Hitbox(this, p);
 		shotgun = new Shotgun(x, y, 80, p, this);
 		rifle = new Rifle(x, y, 80, p, this);
@@ -131,12 +115,6 @@ public class Player implements Hitboxable {
 
 	public void setOpponent(Player other) {
 		opponent = other;
-		System.out.println("opponent set: " + opponent);
-		// if (opponent == null) System.out.println("Still null <<");
-		// if (opponent != null) System.out.println(this.getUser().getName() + "
-		// opponent set: " + opponent.getUser().getName() + " <<");
-		// System.out.println(this.getUser().getName() + " opponent set: " + (opponent
-		// == null) + " <<");
 	}
 
 	public Player getOpponent() {
@@ -152,6 +130,35 @@ public class Player implements Hitboxable {
 	}
 
 	public void draw() {
+		if (my_sprite_sheet_right == null) {
+			System.out.println("Playerstate: " + ps
+					+ "============================================================================");
+			if (ps == PlayerState.ANIME) {
+				my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "OtherGuy.png");
+				my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "OtherGuyLeft.png");
+			}
+			if (ps == PlayerState.TRUMP) {
+				my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "Trump.png");
+				my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "Trump.png");
+			} else {
+				my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "SmurfsRight.png");
+				my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "SmurfsLeft.png");
+			}
+			width = my_sprite_sheet_right.width / N_SPRITES_X;
+			height = my_sprite_sheet_right.height / N_SPRITES_Y;
+
+			int index = 0;
+			for (int y = 0; y < N_SPRITES_Y; y++) {
+				for (int x = 0; x < N_SPRITES_X; x++) {
+					my_sprites_right[index] = my_sprite_sheet_right.get(x * width, y * height, width, height);
+					my_sprites_left[index] = my_sprite_sheet_left.get(x * width, y * height, width, height);
+					index++;
+
+				}
+			}
+		}
+
+		
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		alive = (health > 0);
 
