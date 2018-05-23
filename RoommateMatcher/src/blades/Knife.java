@@ -25,7 +25,7 @@ public class Knife extends Blade implements Hitboxable {
 		knifePic = p.loadImage("weaponImages" + Stage.fileSeparator + "Knife.png");
 		knifePic.resize((int) width, (int) height);
 		super.setBladePic(knifePic);
-		super.setDamage(20);
+		super.setDamage(10);
 	}
 
 }

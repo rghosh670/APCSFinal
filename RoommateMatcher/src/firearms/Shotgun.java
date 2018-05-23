@@ -1,7 +1,6 @@
 package firearms;
 
 import character.Player;
-import character.Player2;
 import processing.core.PApplet;
 import processing.core.PImage;
 import stages.Stage;

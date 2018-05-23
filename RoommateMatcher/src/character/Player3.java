@@ -11,8 +11,10 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import stages.Stage;
 
-/**
- * This class models a surface on which the game is drawn
+/***
+ * This
+ * 
+ * class models a surface on which the game is drawn**
  * 
  * @author ksrinivas788
  *
