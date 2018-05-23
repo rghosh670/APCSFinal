@@ -6,19 +6,23 @@ import processing.core.PImage;
 
 public class PlayerMenu extends StageType {
 	private PImage playerMenu;
-	private TextBox t;
+	private TextBox firstPlayerName;
+	private TextBox secondPlayerName;
 
 	public PlayerMenu(PApplet p) {
 		super(p);
 		playerMenu = p.loadImage("stageImages" + Stage.fileSeparator + "MenuBackground.jpg");
 		playerMenu.resize(p.width, p.height);
-		t = new TextBox((float) p.width / 2, (float) p.height / 2, p.width, p.height / 4, p);
+		firstPlayerName = new TextBox((float) p.width / 2, (float) p.height / 2, p.width, p.height / 4, p);
+
 		super.setStageImage(playerMenu);
 	}
 
 	public void draw() {
 		super.draw();
-		t.draw();
+
+		firstPlayerName.draw();
+
 	}
 
 }

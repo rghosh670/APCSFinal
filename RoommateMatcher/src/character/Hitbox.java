@@ -31,11 +31,6 @@ public class Hitbox {
 			width = ((Bullet) object).getWidth();
 			height = ((Bullet) object).getHeight();
 			angle = 0;
-		} else if (object instanceof Blade) {
-			object = ((Blade) object);
-			width = ((Blade) object).length;
-			height = ((Blade) object).length / 2;
-			angle = ((Blade) object).angle;
 		} else if (object instanceof Tree) {
 			object = ((Tree) object);
 			width = ((Tree) object).getWidth();
@@ -54,9 +49,9 @@ public class Hitbox {
 
 	public void draw() {
 		updateCoordinates();
-		// p.stroke(255, 0, 0);
-		// p.rotate(angle);
-		// p.rect(x, y, width, height);
+		p.stroke(255, 0, 0);
+		p.rotate(angle);
+		p.rect(x, y, width, height);
 	}
 
 	public boolean intersects(Hitbox s) {
@@ -93,6 +88,22 @@ public class Hitbox {
 	public void updateCoordinates(float x, float y) {
 		this.x = x;
 		this.y = y;
+	}
+
+	public void setWidth(float width) {
+		this.width = width;
+	}
+
+	public void setHeight(float height) {
+		this.height = height;
+	}
+
+	public void setY(float y) {
+		this.y = y;
+	}
+
+	public void setX(float x) {
+		this.x = x;
 	}
 
 	public float getX() {

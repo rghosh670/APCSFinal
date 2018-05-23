@@ -1,8 +1,8 @@
 name: Kishore Srinivas
 images: Smurf
 weapons: Rifle
-points: 100
-patience: 8
-attack time: 2
-offense: 5
-defense: 2
+offense: 5.0
+defense: 1.5
+patience: 8.0
+attack time: 2.0
+points: 100.0

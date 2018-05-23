@@ -41,20 +41,15 @@ public class DrawingSurface extends PApplet {
 	private PImage deathScreen;
 
 	private ArrayList<Integer> keys;
-	Knife knife;
-	Blade blade;
 
 	public void setup() {
 		background = new Stage(this);
 		deathScreen = loadImage("stageImages" + Stage.fileSeparator + "BlackScreen.jpg");
 		deathScreen.resize(width, height);
+
 		p1 = new Player(user1, this, 0, height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME);
 		p2 = new Player(user2, this, (int) (width * .8), height - (int) background.getStageType().getGround() - 40,
 				PlayerState.ANIME);
-
-		knife = new Knife(p1.getHandPosition()[0], p1.getHandPosition()[1], p1.getHeight() / 2, (float) (Math.PI / 3),
-				this);
-		blade = new Blade(p1.getHandPosition()[0], p1.getHandPosition()[1], p1.getHeight() / 2, (float) (Math.PI / 3));
 
 		keys = new ArrayList<Integer>();
 
@@ -83,12 +78,6 @@ public class DrawingSurface extends PApplet {
 			p1.draw();
 			p2.draw();
 
-			// knife.moveTo(p1.getHandPosition()[0], p1.getHandPosition()[1]);
-			// knife.draw(this);
-			if (knife.intersects(p2.getHitbox()) != null) {
-				ellipse(knife.intersects(p2.getHitbox())[0], knife.intersects(p2.getHitbox())[1], 5, 5);
-				System.out.println("hit");
-			}
 		}
 
 		setFieldElements();
@@ -156,7 +145,7 @@ public class DrawingSurface extends PApplet {
 		for (Bullet b : p1.getGun().getBullets()) {
 			if (b != null)
 				if (b.getHitbox().intersects(p2.getHitbox())) {
-					p2.getHit(p1);
+					p2.getShot(p1);
 					b.disappear();
 				}
 		}
@@ -164,9 +153,17 @@ public class DrawingSurface extends PApplet {
 		for (Bullet b : p2.getGun().getBullets()) {
 			if (b != null)
 				if (b.getHitbox().intersects(p1.getHitbox())) {
-					p1.getHit(p2);
+					p1.getShot(p2);
 					b.disappear();
 				}
+		}
+
+		if (p1.getBlade().getHitbox().intersects(p2.getHitbox())) {
+			p2.getCut(p1);
+		}
+
+		if (p2.getBlade().getHitbox().intersects(p1.getHitbox())) {
+			p1.getCut(p2);
 		}
 
 	}

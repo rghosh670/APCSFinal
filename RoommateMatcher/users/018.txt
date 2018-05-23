@@ -1,8 +1,8 @@
 name: Blake Randle
 images: Anime
 weapons: knife
-points: 100
+offense: 10.0
+defense: -342.5
 patience: 9.5
-attack time: 6
-offense: 10
-defense: 10
+attack time: 6.0
+points: 100.0

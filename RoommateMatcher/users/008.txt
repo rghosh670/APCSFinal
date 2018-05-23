@@ -1,8 +1,8 @@
 name: Warren Grugett
 images: Trump
 weapons: shotgun
-points: 100
+offense: 10.0
+defense: -88.0
 patience: 0.5
-attack time: 1
-offense: 10
-defense: 2
+attack time: 1.0
+points: 100.0

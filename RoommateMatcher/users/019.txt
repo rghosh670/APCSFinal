@@ -1,8 +1,8 @@
 name: Anushka Saran
 images: Smurf
 weapons: sword
-points: 100
+offense: 9.0
+defense: -261.5
 patience: 4.5
-attack time: 2
-offense: 9
-defense: 6
+attack time: 2.0
+points: 100.0

@@ -2,7 +2,7 @@ name: Lily Li
 images: Trump
 weapons: Rifle
 offense: 3.0
-defense: -550.0
+defense: -1029.0
 patience: 5.5
 attack time: 1.0
 points: 100.0

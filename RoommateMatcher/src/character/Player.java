@@ -1,5 +1,8 @@
 package character;
 
+import blades.Blade;
+import blades.Knife;
+import blades.Sword;
 import data.User;
 import enums.PlayerState;
 import firearms.Bullet;
@@ -10,6 +13,7 @@ import main.DrawingSurface;
 import processing.core.PApplet;
 import processing.core.PImage;
 import stages.Stage;
+import stages.StageType;
 
 /**
  * This class models a surface on which the game is drawn
@@ -59,6 +63,9 @@ public class Player implements Hitboxable {
 	protected boolean frIncrease, bsIncrease;
 
 	protected Player opponent;
+	protected Knife knife;
+	protected Sword sword;
+	protected boolean isKnife;
 
 	protected PlayerState ps;
 
@@ -96,6 +103,8 @@ public class Player implements Hitboxable {
 		hitbox = new Hitbox(this, p);
 		shotgun = new Shotgun(x, y, 80, p, this);
 		rifle = new Rifle(x, y, 80, p, this);
+		sword = new Sword(p, this);
+		knife = new Knife(p, this);
 		health = 100;
 		healthBar = new HealthBar(p, this);
 		alive = true;
@@ -162,6 +171,11 @@ public class Player implements Hitboxable {
 			rifle.draw();
 		else
 			shotgun.draw();
+
+		if (isKnife)
+			knife.draw();
+		else
+			sword.draw();
 
 		healthBar.draw();
 
@@ -345,7 +359,7 @@ public class Player implements Hitboxable {
 		System.out.println(speed_x);
 	}
 
-	public void getHit(Player other) {
+	public void getShot(Player other) {
 		// if (opponent != null) {
 		// if (!justHit && health > opponent.getGun().getDamage()) {
 		// health -= opponent.getGun().getDamage();
@@ -370,10 +384,23 @@ public class Player implements Hitboxable {
 			health -= other.getGun().getDamage();
 			justHit = true;
 		} else if (health <= other.getGun().getDamage()) {
-			System.out.println("EEPS");
+
 			health = 0;
 			alive = false;
 			DrawingSurface.gameOver = true;
+		}
+	}
+
+	public void getCut(Player other) {
+		if (StageType.inGame) {
+			if (!justHit && health > other.getBlade().getDamage()) {
+				health -= other.getBlade().getDamage();
+				justHit = true;
+			} else if (health <= other.getBlade().getDamage()) {
+				health = 0;
+				alive = false;
+				DrawingSurface.gameOver = true;
+			}
 		}
 	}
 
@@ -493,6 +520,13 @@ public class Player implements Hitboxable {
 
 	public boolean getIsAlive() {
 		return alive;
+	}
+
+	public Blade getBlade() {
+		if (isKnife) {
+			return knife;
+		} else
+			return sword;
 	}
 
 }

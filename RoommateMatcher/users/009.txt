@@ -1,8 +1,8 @@
 name: Benjamin Gu
 images: Smurf, Anime
 weapons: blade
-points: 100
+offense: 7.0
+defense: -103.5
 patience: 9.0
-attack time: 1
-offense: 7
-defense: 8
+attack time: 1.0
+points: 100.0

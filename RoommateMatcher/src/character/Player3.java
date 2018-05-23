@@ -117,7 +117,7 @@ public class Player3 extends Player implements Hitboxable {
 			user.changeDefense(-0.5);
 			user.writeToFile();
 		}
-		
+
 		p.pushMatrix();
 		p.pushStyle();
 
@@ -137,12 +137,16 @@ public class Player3 extends Player implements Hitboxable {
 		else
 			shotgun.draw();
 
+		if (isKnife)
+			knife.draw();
+		else
+			sword.draw();
+
 		healthBar.draw();
 
 		p.popMatrix();
 		p.popStyle();
 	}
-
 
 	public void moveRight() {
 		if (!DrawingSurface.gameOver) {
@@ -199,7 +203,7 @@ public class Player3 extends Player implements Hitboxable {
 		}
 	}
 
-	public void getHit(Player other) {
+	public void getShot(Player other) {
 		// if (opponent != null) {
 		// if (!justHit && health > opponent.getGun().getDamage()) {
 		// health -= opponent.getGun().getDamage();
@@ -224,6 +228,17 @@ public class Player3 extends Player implements Hitboxable {
 			health -= other.getGun().getDamage();
 			justHit = true;
 		} else if (health <= other.getGun().getDamage()) {
+			health = 0;
+			alive = false;
+			DrawingSurface.gameOver = true;
+		}
+	}
+
+	public void getCut(Player other) {
+		if (!justHit && health > other.getBlade().getDamage()) {
+			health -= other.getBlade().getDamage();
+			justHit = true;
+		} else if (health <= other.getBlade().getDamage()) {
 			health = 0;
 			alive = false;
 			DrawingSurface.gameOver = true;
@@ -465,10 +480,9 @@ public class Player3 extends Player implements Hitboxable {
 			bulletSpeedIncrease = 0;
 		}
 	}
-	
+
 	public boolean getIsAlive() {
 		return alive;
 	}
-
 
 }

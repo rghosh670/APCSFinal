@@ -72,10 +72,10 @@ public class Main {
 		window.setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		window.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent windowEvent) {
-				if (drawing.user1 != null)
-					drawing.user1.writeToFile();
-				if (drawing.user2 != null)
-					drawing.user2.writeToFile();
+				if (DrawingSurface.user1 != null)
+					DrawingSurface.user1.writeToFile();
+				if (DrawingSurface.user2 != null)
+					DrawingSurface.user2.writeToFile();
 				System.exit(0);
 			}
 		});

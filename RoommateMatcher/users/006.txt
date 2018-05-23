@@ -2,7 +2,7 @@ name: David Dominique
 images: Anime, Smurf
 weapons: knife
 offense: 10.0
-defense: -572.0
+defense: -677.0
 patience: 8.5
 attack time: 2.0
 points: 100.0
