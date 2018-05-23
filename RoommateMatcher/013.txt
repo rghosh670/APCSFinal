@@ -1,8 +1,0 @@
-name: Lily Li
-images: Trump
-weapons: Rifle
-points: 100
-patience: 5.5
-attack time: 1
-offense: 3
-defense: 3

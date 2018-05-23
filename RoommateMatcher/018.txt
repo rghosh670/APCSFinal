@@ -1,8 +1,0 @@
-name: Blake Randle
-images: Anime
-weapons: knife
-points: 100
-patience: 9.5
-attack time: 6
-offense: 10
-defense: 10

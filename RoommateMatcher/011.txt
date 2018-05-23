@@ -1,8 +1,0 @@
-name: Charles Hu
-images: Trump
-weapons: rifle
-points: 100
-patience: 5.5
-attack time: 1
-offense: 8
-defense: 3

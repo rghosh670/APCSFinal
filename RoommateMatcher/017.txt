@@ -1,8 +1,0 @@
-name: Kush Patel
-images: Anime, Smurf
-weapons: rifle
-points: 100
-patience: 8.5
-attack time: 3
-offense: 9
-defense: 3

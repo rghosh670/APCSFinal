@@ -1,8 +1,0 @@
-name: Sohil Nadarajan
-images: Anime, Trump
-weapons: knife
-points: 100
-patience: 9.5
-attack time: 1
-offense: 1.0
-defense: 2.0
