@@ -465,5 +465,10 @@ public class Player3 extends Player implements Hitboxable {
 			bulletSpeedIncrease = 0;
 		}
 	}
+	
+	public boolean getIsAlive() {
+		return alive;
+	}
+
 
 }

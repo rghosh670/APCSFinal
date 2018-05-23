@@ -336,6 +336,7 @@ public class Player implements Hitboxable {
 		System.out.println(speed_x);
 	}
 
+<<<<<<< HEAD
 	public void getHit() {
 		System.out.println("................................" + opponent);
 		if (opponent != null) {
@@ -348,6 +349,37 @@ public class Player implements Hitboxable {
 				health = 0;
 				alive = false;
 			}
+=======
+	public void getHit(Player other) {
+		// if (opponent != null) {
+		// if (!justHit && health > opponent.getGun().getDamage()) {
+		// health -= opponent.getGun().getDamage();
+		// justHit = true;
+		// opponent.getUser().changeOffense(0.05);
+		// this.getUser().changeDefense(-0.05);
+		// } else if (health < opponent.getGun().getDamage()) {
+		// System.out.println("EEPS");
+		// health = 0;
+		// alive = false;
+		// } else {
+		// System.out.println("OPPS");
+		// while (opponent != null) {
+		// DrawingSurface.p1.setOpponent(DrawingSurface.p2);
+		// DrawingSurface.p2.setOpponent(DrawingSurface.p1);
+		// System.out.println("I cry");
+		// }
+		// }
+		// }
+
+		if (!justHit && health > other.getGun().getDamage()) {
+			health -= other.getGun().getDamage();
+			justHit = true;
+		} else if (health <= other.getGun().getDamage()) {
+			System.out.println("EEPS");
+			health = 0;
+			alive = false;
+			DrawingSurface.gameOver = true;
+>>>>>>> branch 'master' of https://github.com/rghosh670/APCSFinal
 		}
 	}
 
@@ -464,6 +496,10 @@ public class Player implements Hitboxable {
 
 	public void setPlayerState(PlayerState ps) {
 		this.ps = ps;
+	}
+
+	public boolean getIsAlive() {
+		return alive;
 	}
 
 }
