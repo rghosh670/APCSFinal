@@ -1,0 +1,8 @@
+name: Maxim Bravo
+images: Smurf
+weapons: gun
+points: 90
+patience: 3.0
+attack time: 3
+offense: 5
+defense: 5

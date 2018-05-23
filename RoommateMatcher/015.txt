@@ -1,0 +1,8 @@
+name: Sepehr Nasiriany
+images: Smurf
+weapons: Sword
+points: 100
+patience: 8.5
+attack time: 1
+offense: 3.5
+defense: 8

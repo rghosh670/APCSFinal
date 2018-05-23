@@ -1,0 +1,8 @@
+name: Rohit Ghosh
+images: Smurf, Anime, Trump
+weapons: rifle 
+points: 90
+patience: 2.5
+attack time: 1
+offense: 6
+defense: 5

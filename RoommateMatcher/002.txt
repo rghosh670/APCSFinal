@@ -1,0 +1,8 @@
+name: Alexander Barbee
+images: Trump, Anime
+weapons: blade
+points: 100
+patience: 6.0
+attack time: 2
+offense: 3
+defense: 7

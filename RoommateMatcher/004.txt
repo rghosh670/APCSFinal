@@ -1,0 +1,8 @@
+name: Vineet Chinthakindi
+images: Smurf Anime
+weapons: knife
+points: 70
+patience: 8.5
+attack time: 1
+offense: 3
+defense: 8

@@ -1,0 +1,8 @@
+name: Vikram Shirsat
+images: Smurf, Anime, Trump
+weapons: knife
+points: 100
+patience: 3.5
+attack time: 0.2
+offense: 4
+defense: 2
