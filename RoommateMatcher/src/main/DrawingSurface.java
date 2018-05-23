@@ -11,10 +11,12 @@ import character.Player3;
 import data.User;
 import enums.PlayerState;
 import enums.StageState;
+import fieldElements.Button;
 import fieldElements.Ladder;
 import fieldElements.TextBox;
 import firearms.Bullet;
 import processing.core.PApplet;
+import processing.core.PImage;
 import stages.Library;
 import stages.LivingRoom;
 import stages.OutsideField;
@@ -36,12 +38,16 @@ public class DrawingSurface extends PApplet {
 
 	public static boolean gameOver;
 
+	private PImage deathScreen;
+
 	private ArrayList<Integer> keys;
 	Knife knife;
 	Blade blade;
 
 	public void setup() {
 		background = new Stage(this);
+		deathScreen = loadImage("stageImages" + Stage.fileSeparator + "BlackScreen.jpg");
+		deathScreen.resize(width, height);
 		p1 = new Player(user1, this, 0, height - (int) background.getStageType().getGround() - 40, PlayerState.ANIME);
 		p2 = new Player(user2, this, (int) (width * .8), height - (int) background.getStageType().getGround() - 40,
 				PlayerState.ANIME);
@@ -87,6 +93,7 @@ public class DrawingSurface extends PApplet {
 
 		setFieldElements();
 		controlPlayers();
+		winLose();
 
 	}
 
@@ -324,7 +331,31 @@ public class DrawingSurface extends PApplet {
 		}
 	}
 
-	public static void setGameOver(boolean go) {
+	public void setGameOver(boolean go) {
 		gameOver = go;
+
+	}
+
+	public void winLose() {
+		pushMatrix();
+
+		if (gameOver) {
+			image(deathScreen, 0, 0);
+			if (!p1.getIsAlive()) {
+				Button p2Wins = new Button(width / 2, height / 8 + height / 20, width / 5, height / 10, this,
+						"Player Two Wins!", true, true);
+				p2Wins.draw();
+			} else {
+				Button p1Wins = new Button(width / 2, height / 8 + height / 20, width / 5, height / 10, this,
+						"Player One Wins!", true, true);
+				p1Wins.draw();
+			}
+
+			Button quit = new Button(width / 2, height / 20 + height / 20, width / 4, height / 10, this, "Quit", true);
+			quit.draw();
+		}
+
+		popMatrix();
+
 	}
 }

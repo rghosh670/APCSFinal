@@ -33,8 +33,10 @@ public class OutsideField extends StageType {
 		// (float) -DrawingSurface.p1.getY() + DrawingSurface.p1.getHeight() / 2);
 
 		outsideField.resize(p.width, p.height);
-		Button menu = new Button((int) (p.width / 2.65), 0, p, "Menu");
-		menu.draw();
+		if (!DrawingSurface.gameOver) {
+			Button menu = new Button((int) (p.width / 2.65), 0, p, "Menu");
+			menu.draw();
+		}
 
 		tree1.draw();
 		tree2.draw();

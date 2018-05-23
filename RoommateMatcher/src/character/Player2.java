@@ -336,7 +336,7 @@ public class Player2 extends Player implements Hitboxable {
 		if (!justHit && health > other.getGun().getDamage()) {
 			health -= other.getGun().getDamage();
 			justHit = true;
-		} else if (health < other.getGun().getDamage()) {
+		} else if (health <= other.getGun().getDamage()) {
 			System.out.println("EEPS");
 			health = 0;
 			alive = false;
@@ -463,6 +463,10 @@ public class Player2 extends Player implements Hitboxable {
 			bsIncrease = false;
 			bulletSpeedIncrease = 0;
 		}
+	}
+
+	public boolean getIsAlive() {
+		return alive;
 	}
 
 }

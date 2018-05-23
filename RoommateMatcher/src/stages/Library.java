@@ -2,6 +2,7 @@ package stages;
 
 import fieldElements.Button;
 import fieldElements.Ladder;
+import main.DrawingSurface;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -35,8 +36,10 @@ public class Library extends StageType {
 
 	public void draw() {
 		super.draw();
-		Button menu = new Button((int) (p.width / 2.65), 0, p, "Menu");
-		menu.draw();
+		if (!DrawingSurface.gameOver) {
+			Button menu = new Button((int) (p.width / 2.65), 0, p, "Menu");
+			menu.draw();
+		}
 
 		for (Ladder l : ladders)
 			l.draw();
