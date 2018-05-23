@@ -114,7 +114,7 @@ public class Player implements Hitboxable {
 
 	public void setOpponent(Player other) {
 		this.opponent = other;
-		System.out.println("opponent set: " + opponent);
+		System.out.println("opponent set: " + opponent + "" + (opponent == null));
 	}
 
 	public User getUser() {
@@ -135,7 +135,7 @@ public class Player implements Hitboxable {
 	}
 
 	public void draw() {
-		System.out.println(ps);
+		System.out.println("PLAYER DRAW >>> " + opponent == null);
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		alive = (health > 0);
 		if (alive) {
@@ -327,6 +327,7 @@ public class Player implements Hitboxable {
 	}
 
 	public void getHit() {
+		System.out.println("................................" + opponent);
 		if (opponent != null) {
 			if (!justHit && health > opponent.getGun().getDamage()) {
 				health -= opponent.getGun().getDamage();
