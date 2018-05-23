@@ -11,7 +11,7 @@ import data.User;
 import enums.MenuState;
 import enums.StageState;
 import main.DrawingSurface;
-import main.Main;
+import main.RoommateMatcher;
 
 /**
  * This class models a textbox which the user can input text into. The data can
@@ -36,13 +36,16 @@ public class TextBox {
 		this.height = height;
 		this.p = drawer;
 		this.userNumber = user;
-		if (user == 1) text = "Please enter your name: \n\n";
-		if (user == 2) text = "Please enter your opponent's name: \n\n";
+		if (user == 1)
+			text = "Please enter your name: \n\n";
+		if (user == 2)
+			text = "Please enter your opponent's name: \n\n";
 		promptText = text;
 	}
 
-	public void draw() {		
+	public void draw() {
 		p.pushStyle();
+		p.pushMatrix();
 
 		p.fill(0, 0, 0, 127.5f);
 
@@ -65,8 +68,9 @@ public class TextBox {
 					text = text.substring(0, text.length() - 1);
 				}
 			} else if (p.key == PConstants.ENTER) {
-				System.out.println(text.replace(promptText, "") + "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-				User u = Main.selectUser(text.replace(promptText, ""), userNumber);
+				System.out.println(
+						text.replace(promptText, "") + "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+				User u = RoommateMatcher.selectUser(text.replace(promptText, ""), userNumber);
 				if (u != null) {
 					done = true;
 					text = promptText;
@@ -88,6 +92,7 @@ public class TextBox {
 		}
 
 		p.popStyle();
+		p.popMatrix();
 	}
 
 	public static void setLastKey(boolean lk) {

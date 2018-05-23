@@ -281,7 +281,7 @@ public class Player implements Hitboxable {
 	}
 
 	public void moveRight() {
-		if (!DrawingSurface.gameOver) {
+		if (!DrawingSurface.gameOver && StageType.inGame) {
 			isFacingLeft = false;
 			if (onGround)
 				current_sprite_right++;
@@ -300,7 +300,7 @@ public class Player implements Hitboxable {
 	}
 
 	public void moveLeft() {
-		if (!DrawingSurface.gameOver) {
+		if (!DrawingSurface.gameOver && StageType.inGame) {
 			isFacingLeft = true;
 
 			rifle.setLeft(isFacingLeft);

@@ -31,7 +31,7 @@ import stages.Stage;
  * @author ksrinivas788
  *
  */
-public class Main {
+public class RoommateMatcher {
 
 	static User u;
 	static DrawingSurface drawing;
@@ -164,56 +164,4 @@ public class Main {
 		}
 		return null;
 	}
-
-	// public static void write(User u, String filename) {
-	// FileWriter writer = null;
-	// try {
-	// writer = new FileWriter(filename);
-	// writer.write(u.toString().split("values")[0]);
-	// for (Entry<String, Double> entry : u.getValues().entrySet()) {
-	// writer.write(entry.getKey() + ": " + entry.getValue() + "\n");
-	// }
-	// } catch (IOException e) {
-	// e.printStackTrace();
-	// } finally {
-	// try {
-	// if (writer != null)
-	// writer.close();
-	// } catch (IOException e) {
-	// e.printStackTrace();
-	// }
-	// }
-	// }
-
-	// public static HashMap<String, Double> readFromFile(String filename) {
-	// try {
-	// File toRead = new File(filename);
-	// FileInputStream fis = new FileInputStream(toRead);
-	// ObjectInputStream ois = new ObjectInputStream(fis);
-	// HashMap<String, Double> newMap = (HashMap<String, Double>) ois.readObject();
-	// ois.close();
-	// fis.close();
-	//
-	// return newMap;
-	// } catch (Exception e) {
-	// return null;
-	// }
-	// }
-	//
-	// public static void writeToFile(HashMap<String, Double> map, String filename)
-	// {
-	// try {
-	// File file = new File(filename);
-	// FileOutputStream fos = new FileOutputStream(file);
-	// ObjectOutputStream oos = new ObjectOutputStream(fos);
-	//
-	// oos.writeObject(map);
-	// oos.flush();
-	// oos.close();
-	// fos.close();
-	// } catch (Exception e) {
-	// e.printStackTrace();
-	// }
-	// }
-
 }

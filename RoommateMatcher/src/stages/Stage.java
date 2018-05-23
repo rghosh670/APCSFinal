@@ -3,7 +3,7 @@ package stages;
 import enums.MenuState;
 import enums.StageState;
 import main.DrawingSurface;
-import main.Main;
+import main.RoommateMatcher;
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -70,7 +70,7 @@ public class Stage {
 				instructions.draw();
 				break;
 			case MATCH_MAKER:
-				((MatchFinder) matchMaker).setup(Main.getUser());
+				((MatchFinder) matchMaker).setup(RoommateMatcher.getUser());
 				matchMaker.draw();
 				break;
 			case PLAYER_ONE_SELECT:

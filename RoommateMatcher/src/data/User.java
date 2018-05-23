@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 
-import main.Main;
+import main.RoommateMatcher;
 import stages.Stage;
 
 /**
@@ -77,7 +77,7 @@ public class User {
 	}
 	
 	public User findBestMatch() {
-		ArrayList<User> users = Main.getUsers();
+		ArrayList<User> users = RoommateMatcher.getUsers();
 		User best = users.get(0);
 		for (User u : users) {
 //			System.out.println(u);

@@ -48,10 +48,15 @@ public class Hitbox {
 	}
 
 	public void draw() {
+		p.pushMatrix();
+		p.pushStyle();
+		p.noFill();
 		updateCoordinates();
-//		p.stroke(255, 0, 0);
-//		p.rotate(angle);
-//		p.rect(x, y, width, height);
+		p.stroke(255, 0, 0);
+		p.rotate(angle);
+		p.rect(x, y, width, height);
+		p.popStyle();
+		p.popMatrix();
 	}
 
 	public boolean intersects(Hitbox s) {

@@ -5,7 +5,7 @@ import java.util.Map.Entry;
 import data.MatchMaker;
 import data.User;
 import fieldElements.Button;
-import main.Main;
+import main.RoommateMatcher;
 import processing.core.PApplet;
 import processing.core.PImage;
 
