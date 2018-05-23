@@ -2,20 +2,27 @@ Roommate Finder README
 Vikram Shirsat, Rohit Ghosh, and Kishore Srinivas
 
 Introduction: 
-Instead of a usual roommate finding app or even just a questionnaire, this application has been built to minimize the possible interference of wanting to look like a good person to allow someone to find a roommate who truly is like them. In this application, a user is thrown into a first person game in which their inherent decisions that are made expose some of their inner qualities as a person. This app will force users to make decisions that relate to possible roommate qualities such as if a person is a late night or early morning person or even if they are super clean.
+Instead of a usual roommate finding app or even just a questionnaire, this application has been built to minimize
+the possible interference of wanting to look like a good person to allow someone to find a roommate who truly is like 
+them. In this application, a user is thrown into a first person game in which their inherent decisions that are made 
+expose some of their inner qualities as a person. This app will force users to make decisions that relate to possible 
+roommate qualities such as if a person is a late night or early morning person or even if they are super clean.
 
 Instructions:
 Welcome to the Roommate Matcher!
-In this game you can speed through the process of finding a roommate by playing a game! Instead of a boring questionnaire where you craft responses to look like an angel, let out your inner gamer and show your true qualities off! With every step of the game and fight with another character, you will be matched using our current databases to another character who fits your qualities!
-First, type in your name and the name of your opponent. Then click the play button. You can select a map to fight in as well as character for both you and your opponent. Once you enter the game, try your best to defeat your opponent. The game ends when either you or your opponent lose all their health. 
+In this game you can speed through the process of finding a roommate by playing a game! Instead of a boring 
+questionnaire where you craft responses to look like an angel, let out your inner gamer and show your true qualities off!
+With every step of the game and fight with another character, you will be matched using our current databases to another
+person in the class who fits your qualities!
+First, type in your name and the name of your opponent. Then click the play button. You can select a map to fight in as 
+well as character for both you and your opponent. Once you enter the game, try your best to defeat your opponent. The
+ game ends when either you or your opponent lose all their health. 
 
 Controls: 
-Player 1 controls: Arrow Keys to move, Period to shoot, Comma to toggle gun between rifle and shotgun, M to toggle blade between knife and sword
-Player 2 controls: WASD to move, F to shoot, Q to toggle gun between rifle and shotgun, E to toggle blade between knife and sword
-
-Game:
-
-Moving around in a world with specific prescribed moves
+Player 1 controls: Arrow Keys to move, Period to shoot, Comma to toggle gun between rifle and shotgun, M to toggle blade 
+between knife and sword.
+Player 2 controls: WASD to move, F to shoot, Q to toggle gun between rifle and shotgun, E to toggle blade between knife 
+and sword.
 
 Must-have:
 Game will have 3 options for arenas to fight in
@@ -70,7 +77,6 @@ Instructions: This class models the screen which displays the instructions
 Library: This class models the library stage
 LivingRoom: This class models the Living Room stage
 MainMenu: This class models the Main Menu which first appears when the program starts
-MatchFinder: This class models the screen that displays the closest match to the current user
 OutdoorField: This class models the Outdoor Field stage that the players can play in
 PlayerMenu: This class models the menu in which the users enter their names
 PlayerOneSelect: This class models the stage in which the first user selects his or her character
