@@ -23,20 +23,25 @@ import main.Main;
 public class TextBox {
 
 	private float x, y, width, height;
-	private String text;
+	private String text, promptText;
 	private PApplet p;
-	private static boolean lastKey, foundUser;
+	private static boolean lastKey;
+	public boolean done;
+	private int userNumber;
 
-	public TextBox(float x, float y, float width, float height, PApplet drawer) {
+	public TextBox(float x, float y, float width, float height, PApplet drawer, int user) {
 		this.x = x;
 		this.y = y;
 		this.width = width;
 		this.height = height;
 		this.p = drawer;
-		text = "Please enter your name: \n\n";
+		this.userNumber = user;
+		if (user == 1) text = "Please enter your name: \n\n";
+		if (user == 2) text = "Please enter your opponent's name: \n\n";
+		promptText = text;
 	}
 
-	public void draw() {
+	public void draw() {		
 		p.pushStyle();
 
 		p.fill(0, 0, 0, 127.5f);
@@ -56,17 +61,26 @@ public class TextBox {
 		if (p.keyPressed && !lastKey) {
 			lastKey = true;
 			if (p.key == PConstants.BACKSPACE) {
-				if (text.length() > "Please enter your name: \n\n".length()) {
+				if (text.length() > promptText.length()) {
 					text = text.substring(0, text.length() - 1);
 				}
 			} else if (p.key == PConstants.ENTER) {
-				User u = Main.selectUser(text.replace("Please enter your name: \n\n", ""));
-				System.out.println(u);
+				System.out.println(text.replace(promptText, "") + "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
+				User u = Main.selectUser(text.replace(promptText, ""), userNumber);
 				if (u != null) {
-					DrawingSurface.background.setMenu(MenuState.MAIN_MENU);
-					DrawingSurface.background.setIsStage(false);
+					done = true;
+					text = promptText;
+					if (userNumber == 1) {
+						System.out.println("1 entered");
+						return;
+					}
+					if (userNumber == 2) {
+						System.out.println("2 entered");
+						DrawingSurface.background.setMenu(MenuState.MAIN_MENU);
+						DrawingSurface.background.setIsStage(false);
+					}
 				} else
-					text = "Please enter your name: \n\n";
+					text = promptText;
 			} else if (p.key != PConstants.CONTROL && p.key != PConstants.ALT && p.key != PConstants.SHIFT
 					&& p.key >= 32 && p.key <= 122) {
 				text += (p.key + "").toUpperCase();

@@ -93,7 +93,7 @@ public class Main {
 		return u;
 	}
 
-	public static User selectUser(String name) {
+	public static User selectUser(String name, int userNum) {
 		Scanner in = null, input = null;
 		try {
 			FileReader reader = new FileReader("users" + Stage.fileSeparator + "users.txt");
@@ -102,20 +102,9 @@ public class Main {
 				String line = in.nextLine();
 				if (line.toLowerCase().contains(name.toLowerCase())) {
 					u = read("users" + Stage.fileSeparator + line.split(":")[0] + ".txt");
-					drawing.setUser1(u);
+					if (userNum == 1) drawing.setUser1(u);
+					if (userNum == 2) drawing.setUser2(u);
 					break;
-				}
-			}
-			boolean foundSecond = false;
-			if (u != null) {
-				while (!foundSecond) {
-					User second = read(
-							"users" + Stage.fileSeparator + String.format("%03d", (int) (Math.random() * 20)) + ".txt");
-					System.out.println("2: " + second);
-					if (!second.getName().equals(u.getName())) {
-						foundSecond = true;
-						drawing.setUser2(second);
-					}
 				}
 			}
 		} catch (FileNotFoundException e) {

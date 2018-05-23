@@ -13,15 +13,16 @@ public class PlayerMenu extends StageType {
 		super(p);
 		playerMenu = p.loadImage("stageImages" + Stage.fileSeparator + "MenuBackground.jpg");
 		playerMenu.resize(p.width, p.height);
-		firstPlayerName = new TextBox((float) p.width / 2, (float) p.height / 2, p.width, p.height / 4, p);
-
+		firstPlayerName = new TextBox((float) p.width / 2, (float) p.height / 3, p.width, p.height / 4, p, 1);
+		secondPlayerName = new TextBox((float) p.width / 2, (float) 2*p.height / 3, p.width, p.height / 4, p, 2);
 		super.setStageImage(playerMenu);
 	}
 
 	public void draw() {
 		super.draw();
 
-		firstPlayerName.draw();
+		if (!firstPlayerName.done) firstPlayerName.draw();
+		if (firstPlayerName.done) secondPlayerName.draw();
 
 	}
 
