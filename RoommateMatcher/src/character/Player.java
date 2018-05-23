@@ -135,12 +135,11 @@ public class Player implements Hitboxable {
 	public void draw() {
 		if (my_sprite_sheet_right == null) {
 			System.out.println("Playerstate: " + ps
-					+ "============================================================================");
+					+ " ============================================================================");
 			if (ps == PlayerState.ANIME) {
 				my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "OtherGuy.png");
 				my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "OtherGuyLeft.png");
-			}
-			if (ps == PlayerState.TRUMP) {
+			} else if (ps == PlayerState.TRUMP) {
 				my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "Trump.png");
 				my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "Trump.png");
 			} else {
@@ -156,7 +155,6 @@ public class Player implements Hitboxable {
 					my_sprites_right[index] = my_sprite_sheet_right.get(x * width, y * height, width, height);
 					my_sprites_left[index] = my_sprite_sheet_left.get(x * width, y * height, width, height);
 					index++;
-
 				}
 			}
 		}

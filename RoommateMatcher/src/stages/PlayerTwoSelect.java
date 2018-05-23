@@ -33,7 +33,7 @@ public class PlayerTwoSelect extends StageType {
 		trumpPic = trumpPic.get(0, 0, trumpPic.width / 6, trumpPic.height / 4);
 		trumpPic.resize((int) (trumpPic.width * 2.25), (int) (trumpPic.height * 2.25));
 
-		title = new Button(p.width / 2, p.height / 4, 0, 0, p, "Player One Select", true, true, false);
+		title = new Button(p.width / 2, p.height / 4, 0, 0, p, "Player Two Select", true, true, false);
 
 		super.setStageImage(playerMenuBackground);
 	}
