@@ -1,6 +1,5 @@
 package character;
 
-import blades.Blade;
 import fieldElements.Tree;
 import firearms.Bullet;
 import processing.core.PApplet;

@@ -39,7 +39,7 @@ public class TextBox {
 		if (user == 1)
 			text = "Please enter your name: \n\n";
 		if (user == 2)
-			text = "Please enter your opponent's name: \n\n";
+			text = "Please enter your the name of your opponent: \n\n";
 		promptText = text;
 	}
 

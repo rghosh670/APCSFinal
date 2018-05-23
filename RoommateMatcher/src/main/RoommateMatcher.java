@@ -38,11 +38,6 @@ public class RoommateMatcher {
 	static ArrayList<User> users = new ArrayList<User>();
 
 	public static void main(String args[]) {
-		// HashMap<String, Double> ratings = new HashMap<String, Double>();
-
-		// ratings = readFromFile("users.txt");
-		// System.out.println("read");
-		// System.out.println(ratings);
 
 		Scanner in = null;
 		try {
