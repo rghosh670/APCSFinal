@@ -23,9 +23,9 @@ import stages.StageType;
  */
 public class Player implements Hitboxable {
 
-	private final int N_SPRITES_X = 4;
-	private final int N_SPRITES_Y = 4;
-	private final int TOTAL_SPRITES = N_SPRITES_X * N_SPRITES_Y;
+	private int N_SPRITES_X;
+	private int N_SPRITES_Y;
+	private int TOTAL_SPRITES;
 
 	private boolean isFacingLeft, isMoving, isJumping;
 
@@ -86,10 +86,9 @@ public class Player implements Hitboxable {
 		this.p = p;
 		this.x = xPos + 30;
 		this.y = yPos;
-		my_sprites_right = new PImage[TOTAL_SPRITES];
-		my_sprites_left = new PImage[TOTAL_SPRITES];
 
 		this.ps = ps;
+
 		hitbox = new Hitbox(this, p);
 		shotgun = new Shotgun(x, y, 80, p, this);
 		rifle = new Rifle(x, y, 80, p, this);
@@ -133,33 +132,106 @@ public class Player implements Hitboxable {
 	}
 
 	public void draw() {
-		if (my_sprite_sheet_right == null) {
-			System.out.println("Playerstate: " + ps
-					+ " ============================================================================");
-			if (ps == PlayerState.ANIME) {
-				my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "OtherGuy.png");
-				my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "OtherGuyLeft.png");
-			} else if (ps == PlayerState.TRUMP) {
-				my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "Trump.png");
-				my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "Trump.png");
-			} else {
+		if (my_sprite_sheet_right == null || my_sprite_sheet_left == null) {
+			int index = 0;
+
+			if (ps.equals(PlayerState.SMURF)) {
 				my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "SmurfsRight.png");
 				my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "SmurfsLeft.png");
-			}
-			width = my_sprite_sheet_right.width / N_SPRITES_X;
-			height = my_sprite_sheet_right.height / N_SPRITES_Y;
+				N_SPRITES_X = 4;
+				N_SPRITES_Y = 4;
+				TOTAL_SPRITES = N_SPRITES_X * N_SPRITES_Y;
+				my_sprites_right = new PImage[TOTAL_SPRITES];
+				my_sprites_left = new PImage[TOTAL_SPRITES];
+				width = my_sprite_sheet_right.width / N_SPRITES_X;
+				height = my_sprite_sheet_right.height / N_SPRITES_Y;
 
-			int index = 0;
-			for (int y = 0; y < N_SPRITES_Y; y++) {
-				for (int x = 0; x < N_SPRITES_X; x++) {
-					my_sprites_right[index] = my_sprite_sheet_right.get(x * width, y * height, width, height);
-					my_sprites_left[index] = my_sprite_sheet_left.get(x * width, y * height, width, height);
-					index++;
+				for (int y = 0; y < N_SPRITES_Y; y++) {
+					for (int x = 0; x < N_SPRITES_X; x++) {
+
+						PImage temp = my_sprite_sheet_right.get(x * width, y * height, width, height);
+						temp.resize((int) (p.width / 11.25), (int) (p.height / 7.03125));
+						my_sprites_right[index] = temp;
+
+						temp = my_sprite_sheet_left.get(x * width, y * height, width, height);
+						temp.resize((int) (p.width / 11.25), (int) (p.height / 7.03125));
+						my_sprites_left[index] = temp;
+
+						index++;
+					}
 				}
+
+				width = (int) (p.width / 11.25);
+				height = (int) (p.height / 7.03125);
+
+			} else if (ps.equals(PlayerState.ANIME)) {
+				my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "OtherGuy.png");
+				my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "OtherGuyLeft.png");
+
+				N_SPRITES_X = 5;
+				N_SPRITES_Y = 2;
+				TOTAL_SPRITES = N_SPRITES_X * N_SPRITES_Y;
+				my_sprites_right = new PImage[TOTAL_SPRITES];
+				my_sprites_left = new PImage[TOTAL_SPRITES];
+
+				width = my_sprite_sheet_right.width / N_SPRITES_X;
+				height = my_sprite_sheet_right.height / N_SPRITES_Y;
+
+				for (int y = 0; y < N_SPRITES_Y; y++) {
+					for (int x = 0; x < N_SPRITES_X; x++) {
+
+						PImage temp = my_sprite_sheet_right.get(x * width, y * height, width, height);
+						temp.resize((int) (p.width / 11.25), (int) (p.height / 7.03125));
+
+						my_sprites_right[index] = temp;
+
+						temp = my_sprite_sheet_left.get(x * width, y * height, width, height);
+						temp.resize((int) (p.width / 11.25), (int) (p.height / 7.03125));
+						my_sprites_left[index] = temp;
+
+						index++;
+
+					}
+				}
+
+				width = (int) (p.width / 11.25);
+				height = (int) (p.height / 7.03125);
+
+			} else {
+
+				my_sprite_sheet_right = p.loadImage("playerImages" + Stage.fileSeparator + "Trump.png");
+				my_sprite_sheet_left = p.loadImage("playerImages" + Stage.fileSeparator + "Trump.png");
+
+				N_SPRITES_X = 6;
+				N_SPRITES_Y = 4;
+				TOTAL_SPRITES = N_SPRITES_X * N_SPRITES_Y;
+				my_sprites_right = new PImage[N_SPRITES_X];
+				my_sprites_left = new PImage[N_SPRITES_X];
+				width = my_sprite_sheet_right.width / N_SPRITES_X;
+				height = my_sprite_sheet_right.height / N_SPRITES_Y;
+
+				for (int x = 0; x < N_SPRITES_X; x++) {
+					PImage temp = my_sprite_sheet_right.get(x * width, height, width, height);
+					temp.resize((int) (p.width / 11.25), (int) (p.height / 7.03125));
+					my_sprites_right[index] = temp;
+
+					temp = my_sprite_sheet_right.get(my_sprite_sheet_right.width - x * width - width, 3 * height, width,
+							height);
+					temp.resize((int) (p.width / 11.25), (int) (p.height / 7.03125));
+					my_sprites_left[index] = temp;
+					index++;
+
+				}
+				width = (int) (p.width / 11.25);
+				height = (int) (p.height / 7.03125);
 			}
+
+			System.out.println("Playerstate: " + ps
+					+ " ============================================================================");
+			hitbox.setWidth(p.width / 16);
+			hitbox.setHeight(height);
 		}
 
-		
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		alive = (health > 0);
 
@@ -167,12 +239,14 @@ public class Player implements Hitboxable {
 			p.pushMatrix();
 			p.pushStyle();
 
+			hitbox.draw();
+
 			fall();
 			fall();
 			fall();
 			act();
 
-			hitbox.updateCoordinates();
+			hitbox.updateCoordinates(x - (p.width / 65), y);
 			display_the_sprite();
 
 			p.frameRate(30);
@@ -211,7 +285,12 @@ public class Player implements Hitboxable {
 			isFacingLeft = false;
 			if (onGround)
 				current_sprite_right++;
-			current_sprite_right %= TOTAL_SPRITES;
+
+			if (ps.equals(PlayerState.SMURF))
+				current_sprite_right %= TOTAL_SPRITES;
+			else
+				current_sprite_right %= N_SPRITES_X;
+
 			x = (x < p.width - width) ? x += speed_x : x;
 
 			rifle.setLeft(isFacingLeft);
@@ -230,7 +309,10 @@ public class Player implements Hitboxable {
 			if (onGround)
 				current_sprite_left++;
 
-			current_sprite_left %= TOTAL_SPRITES;
+			if (ps.equals(PlayerState.SMURF))
+				current_sprite_left %= TOTAL_SPRITES;
+			else
+				current_sprite_left %= N_SPRITES_X;
 			x = (x > 0) ? x -= speed_x : x;
 		}
 	}
