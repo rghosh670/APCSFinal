@@ -6,6 +6,14 @@ import main.DrawingSurface;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+
+/**
+ * 
+ * This class models the library stage
+ * 
+ * @author ksrinivas788
+ *
+ */
 public class Library extends StageType {
 
 	private PImage library;

@@ -5,6 +5,13 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import stages.Stage;
 
+/**
+ * 
+ * This class models a power up which makes the player's bullets faster for a short period of time
+ * 
+ * @author vshirsat573
+ *
+ */
 public class PowerUpBulletSpeed extends PowerUp {
 	private PImage bsImage;
 

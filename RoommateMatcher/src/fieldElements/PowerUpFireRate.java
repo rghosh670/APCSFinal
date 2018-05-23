@@ -5,6 +5,13 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import stages.Stage;
 
+/**
+ * 
+ * This class models a power up which makes the player shoot at a faster rate for a period of time
+ * 
+ * @author ksrinivas788
+ *
+ */
 public class PowerUpFireRate extends PowerUp {
 	private PImage frImage;
 

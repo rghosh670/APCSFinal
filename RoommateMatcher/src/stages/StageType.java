@@ -9,6 +9,13 @@ import main.DrawingSurface;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class is used as a basis for all the playable stages
+ * 
+ * @author rohitghosh
+ *
+ */
 public class StageType {
 	protected PImage stageImage;
 	protected PApplet p;
@@ -25,7 +32,7 @@ public class StageType {
 
 	public void draw() {
 
-		inGame = (this instanceof Library || this instanceof OutsideField || this instanceof LivingRoom);
+		inGame = (this instanceof Library || this instanceof OutdoorField || this instanceof LivingRoom);
 
 		p.image(stageImage, 0, 0);
 

@@ -6,13 +6,20 @@ import main.DrawingSurface;
 import processing.core.PApplet;
 import processing.core.PImage;
 
-public class OutsideField extends StageType {
+/**
+ * 
+ * This class models the Outdoor Field stage that the players can play in
+ * 
+ * @author rohitghosh
+ *
+ */
+public class OutdoorField extends StageType {
 
 	private PImage outsideField;
 	private PImage treeImage;
 	private Tree tree1, tree2;
 
-	public OutsideField(PApplet p) {
+	public OutdoorField(PApplet p) {
 		super(p);
 		outsideField = p.loadImage("stageImages" + Stage.fileSeparator + "OutdoorField.jpg");
 		outsideField.resize(p.width, p.height);

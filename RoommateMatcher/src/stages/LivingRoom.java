@@ -8,6 +8,13 @@ import main.DrawingSurface;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class models the Living Room stage
+ * 
+ * @author vshirsat573
+ *
+ */
 public class LivingRoom extends StageType {
 
 	private PImage livingRoom;

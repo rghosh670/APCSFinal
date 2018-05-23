@@ -6,6 +6,13 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import stages.Stage;
 
+/**
+ * 
+ * This class models a tree which is present in the Outdoor Field stage
+ * 
+ * @author vshirsat573
+ *
+ */
 public class Tree extends FieldElement implements Hitboxable {
 	private PImage treePic;
 	private Hitbox trunkHitbox, branchHitbox;

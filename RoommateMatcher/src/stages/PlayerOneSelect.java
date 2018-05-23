@@ -8,6 +8,13 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class models the stage in which the first user selects his or her character
+ * 
+ * @author ksrinivas788
+ *
+ */
 public class PlayerOneSelect extends StageType {
 
 	private PImage playerMenuBackground, smurfPic, animePic, trumpPic;

@@ -17,7 +17,7 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import stages.Library;
 import stages.LivingRoom;
-import stages.OutsideField;
+import stages.OutdoorField;
 import stages.Stage;
 import stages.StageType;
 
@@ -192,8 +192,8 @@ public class DrawingSurface extends PApplet {
 	}
 
 	private void setFieldElements() {
-		if (background.getStageType() instanceof OutsideField) {
-			OutsideField of = (OutsideField) (background.getStageType());
+		if (background.getStageType() instanceof OutdoorField) {
+			OutdoorField of = (OutdoorField) (background.getStageType());
 			if (p1.getHitbox().intersects(of.getTrees()[0].getHitboxes()[0])
 					|| p1.getHitbox().intersects(of.getTrees()[1].getHitboxes()[0])) {
 				p1.setInTree(true);

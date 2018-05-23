@@ -16,7 +16,7 @@ import stages.Stage;
 import stages.StageType;
 
 /**
- * This class models a surface on which the game is drawn
+ * This class models a playable character
  * 
  * @author ksrinivas788
  *
