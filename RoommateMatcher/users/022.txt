@@ -1,5 +1,5 @@
 name: Evan Su
-images: Anime, Smurf
+images: Smurf, Anime, Trump
 weapons: rifle
 points: 100
 patience: 8.5

@@ -1,5 +1,5 @@
 name: Rom Waisbort
-images: Anime
+images: Smurf, Anime, Trump
 weapons: Shotgun
 points: 100
 patience: 3.5

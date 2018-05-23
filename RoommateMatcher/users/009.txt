@@ -1,5 +1,5 @@
 name: Benjamin Gu
-images: Smurf, Anime
+images: Smurf, Anime, Trump
 weapons: blade
 offense: 7.0
 defense: -103.5

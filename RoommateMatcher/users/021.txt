@@ -1,5 +1,5 @@
 name: Kishore Srinivas
-images: Smurf
+images: Smurf, Anime, Trump
 weapons: Rifle
 offense: 5.0
 defense: 1.5

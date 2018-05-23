@@ -1,5 +1,5 @@
 name: Prateek Anand
-images: Smurf, Trump
+images: Smurf, Anime, Trump
 weapons: knife
 offense: 7.0
 defense: -194.5

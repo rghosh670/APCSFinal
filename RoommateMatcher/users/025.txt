@@ -1,5 +1,5 @@
 name: Helen Wang
-images: Trump
+images: Smurf, Anime, Trump
 weapons: blade
 points: 100
 patience: 5

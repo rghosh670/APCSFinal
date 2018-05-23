@@ -1,5 +1,5 @@
 name: David Dominique
-images: Anime, Smurf
+images: Smurf, Anime, Trump
 weapons: knife
 offense: 10.0
 defense: -677.0

@@ -1,5 +1,5 @@
 name: Alexander Barbee
-images: Trump, Anime
+images: Smurf, Anime, Trump
 weapons: blade
 offense: 3.0
 defense: -195.5

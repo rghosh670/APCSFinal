@@ -1,5 +1,5 @@
 name: Sepehr Nasiriany
-images: Smurf
+images: Smurf, Anime, Trump
 weapons: Sword
 offense: 3.5
 defense: -147.0
