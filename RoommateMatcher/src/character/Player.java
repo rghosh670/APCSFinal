@@ -45,31 +45,28 @@ public class Player implements Hitboxable {
 	private final double grav = .6;
 	private boolean onGround;
 
-	private int health;
-	private boolean justHit, alive;
-	private int healthCooldown;
-	private HealthBar healthBar;
+	protected int health;
+	protected boolean justHit, alive;
+	protected int healthCooldown;
+	protected HealthBar healthBar;
 
-	private float originalBottom;
-	private float bottom;
+	protected float originalBottom;
+	protected float bottom;
 
-	private boolean inTree, onLadder, onCouch;
+	protected boolean inTree, onLadder, onCouch;
 
-	private int fireRateIncrease, bulletSpeedIncrease;
-	private boolean frIncrease, bsIncrease;
+	protected int fireRateIncrease, bulletSpeedIncrease;
+	protected boolean frIncrease, bsIncrease;
 
-	private Player opponent;
+	protected Player opponent;
 
 	protected PlayerState ps;
-
-	protected static int iterations;
 
 	public Player(PApplet p) {
 		this(null, p, 0, 0, PlayerState.SMURF);
 	}
 
 	public Player(User u, PApplet p, int xPos, int yPos, PlayerState ps) {
-		iterations++;
 		this.user = u;
 		this.p = p;
 		this.x = xPos + 30;
@@ -105,7 +102,13 @@ public class Player implements Hitboxable {
 
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		bottom = originalBottom;
-		System.out.println(iterations + " HERE I AM");
+
+		try {
+			DrawingSurface.p1.setOpponent(DrawingSurface.p2);
+			DrawingSurface.p2.setOpponent(DrawingSurface.p1);
+		} catch (NullPointerException e) {
+
+		}
 	}
 
 	public void setUser(User u) {
@@ -114,7 +117,7 @@ public class Player implements Hitboxable {
 
 	public void setOpponent(Player other) {
 		this.opponent = other;
-		System.out.println("opponent set: " + opponent + "" + (opponent == null));
+		System.out.println("opponent set: " + opponent);
 	}
 
 	public User getUser() {
@@ -135,24 +138,31 @@ public class Player implements Hitboxable {
 	}
 
 	public void draw() {
-		System.out.println("PLAYER DRAW >>> " + opponent == null);
+		System.out.println(ps);
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		alive = (health > 0);
+
 		if (alive) {
-			p.pushMatrix();
-			p.pushStyle();
+		p.pushMatrix();
+		p.pushStyle();
 
-			fall();
-			fall();
-			act();
+		fall();
+		fall();
+		fall();
+		act();
 
-			hitbox.updateCoordinates();
-			display_the_sprite();
+		hitbox.updateCoordinates();
+		display_the_sprite();
 
-			p.frameRate(30);
+		p.frameRate(30);
 
-			rifle.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
-			shotgun.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
+		rifle.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
+		shotgun.moveTo(getHandPosition()[0], getHandPosition()[1] - height / 3);
+
+		if (isRifle)
+			rifle.draw();
+		else
+			shotgun.draw();
 
 			if (isRifle)
 				rifle.draw();
@@ -340,6 +350,7 @@ public class Player implements Hitboxable {
 			}
 		}
 	}
+
 
 	public int getHealth() {
 		return health;

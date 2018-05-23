@@ -1,8 +1,8 @@
 name: Seoyoung Ha
 images: Trump, Anime
 weapons: sword
-points: 100
+offense: 4.0
+defense: -32.0
 patience: 8.5
-attack time: 1
-offense: 4
-defense: 10
+attack time: 1.0
+points: 100.0

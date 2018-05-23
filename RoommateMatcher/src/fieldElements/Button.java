@@ -113,7 +113,6 @@ public class Button {
 				} else {
 					DrawingSurface.p2.setPlayerState(PlayerState.SMURF);
 					DrawingSurface.background.setIsStage(true);
-
 					DrawingSurface.background.getStageType().resetPlayers();
 				}
 			}
@@ -123,7 +122,6 @@ public class Button {
 					DrawingSurface.p1.setPlayerState(PlayerState.ANIME);
 					DrawingSurface.background.setMenu(MenuState.PLAYER_TWO_SELECT);
 					DrawingSurface.background.setIsStage(false);
-
 					p.delay(100);
 				} else {
 					DrawingSurface.p2.setPlayerState(PlayerState.ANIME);
@@ -165,10 +163,12 @@ public class Button {
 		}
 
 		p.rect(x, y, width, height);
+		
 		if (!white)
 			p.fill(0);
 		else
 			p.fill(255);
+		
 		p.textAlign(PConstants.CENTER, PConstants.CENTER);
 		p.textSize((p.height + p.width) / 80);
 

@@ -51,7 +51,7 @@ public class TextBox {
 		p.textFont(myFont);
 		p.textSize(40);
 
-		p.text(text, x, y - 37);
+		p.text(text, x, y - (int) (p.height / 24.3243243243));
 
 		if (p.keyPressed && !lastKey) {
 			lastKey = true;
