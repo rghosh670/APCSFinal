@@ -4,29 +4,14 @@ Vikram Shirsat, Rohit Ghosh, and Kishore Srinivas
 Introduction: 
 Instead of a usual roommate finding app or even just a questionnaire, this application has been built to minimize the possible interference of wanting to look like a good person to allow someone to find a roommate who truly is like them. In this application, a user is thrown into a first person game in which their inherent decisions that are made expose some of their inner qualities as a person. This app will force users to make decisions that relate to possible roommate qualities such as if a person is a late night or early morning person or even if they are super clean.
 
-Instruction:
-Welcome to the Roommate Matcher!
-In this game you can speed through the process of finding n a roommate by playing a game! Instead of a boring questionnaire where you craft responses to look like an angel, let out your inner gamer and show your true qualities off! With every step of the game and fight with another character, you will be matched using our current databases to another character who fits your qualities!
-Click the MENU button to leave the instructions screen!
-Pick the arena you would like to fight in
-Pick the user you would like to fight with
-Controls: 
-Player 1 controls: Arrowkeys to move, down arrow to shoot and shift to use melee weapon 
-Player 2 controls: WAD to move, S to shoot and F to use melee weapon 
-
-Starting Screen
-Instructions button in top right corner allows the user to view these instructions
-ESC button to leave the game
-
 Instructions:
-ESC to leave instructions screen
-WASD/arrow keys to move around
-Some key (R?) to record the game data and use it for the roommate finding thing
+Welcome to the Roommate Matcher!
+In this game you can speed through the process of finding a roommate by playing a game! Instead of a boring questionnaire where you craft responses to look like an angel, let out your inner gamer and show your true qualities off! With every step of the game and fight with another character, you will be matched using our current databases to another character who fits your qualities!
+First, type in your name and the name of your opponent. Then click the play button. You can select a map to fight in as well as character for both you and your opponent. Once you enter the game, try your best to defeat your opponent. The game ends when either you or your opponent lose all their health. 
 
-Preparation of data:
-Send out a survey to the class to collect data about what they would choose in specific situations that might occur in the game
-This data will then be used to compare players in the game to real people in hopes of making roommate matching more personalized.
-
+Controls: 
+Player 1 controls: Arrow Keys to move, Period to shoot, Comma to toggle gun between rifle and shotgun, M to toggle blade between knife and sword
+Player 2 controls: WASD to move, F to shoot, Q to toggle gun between rifle and shotgun, E to toggle blade between knife and sword
 
 Game:
 
@@ -35,7 +20,7 @@ Moving around in a world with specific prescribed moves
 Must-have:
 Game will have 3 options for arenas to fight in
 2 different guns (with attributes)
-2 different swords (with attributes)
+2 different blades (with attributes)
 10 profiles to compare to (Storing data in text files to reload and store data)
 Ability to move
 Data analytics (very basic just to determine some similar people)
@@ -45,8 +30,8 @@ Basic Person upgrades/attributes (speed, jump height, money)
 Want-to-have:
 Multiple complex stages
 Database storage
-larger datasets 
-semi-realistic physics
+Larger datasets 
+Semi-realistic physics
 
 
 Stretch:
@@ -56,28 +41,52 @@ Advanced interaction (picking up and throwing objects in the arena)
 
 
 Class List:
-Player: the person on the screen
-Field: the field
-Multiple field classes for each arena of the game
-Main class:
-	contains the compare people method
-	reads and writes to files
-	creates Users
-DrawingSurface: the surface on which the game is played
-Blade: models a blade object that has x, y, length, and swing() method
-Sword: extends Blade, has different length, models a larger weapon
-Knife: extends Blade, has different length, models a smaller weapon
-Firearm: models a gun object with x, y, width, and height
-Rifle: extends Firearm, models a larger weapon
-Shotgun: extends Firearm, models a smaller weapon
-Hitbox: models a box that surrounds every character and weapon and checks for collisions with other Hitboxes
+Blade: This class models a blade which is extended by different types of blades
+Knife: This class models a knife which is a type of blade
+Sword: This class models a sword which is a type of blade
+HealthBar: This class models the health bar that appears above each player
+Hitbox: This creates a box around each character so that when a weapon hits that area they lose health
+Player: This class models a playable character
+MatchMaker: This class matches players to stored users in the list of users
+User: This class models a user and stores their characteristics
+Button: This class models a button which is used to switch between stages and select characters and weapons
+Couch: This class draws hitboxes around the couch in the living room map
+FieldElement: This class represents an object that may be present on a map
+Ladder: This class models a ladder present in the Library and LivingRoom stages
+LivingRoomLadder: This class models a ladder present in the living room stage
+PowerUp: This class models a power up which falls down randomly 
+PowerUpBulletSpeed: This class models a power up which makes the player's bullets faster for a short period of time
+PowerUpFireRate: This class models a power up which makes the player shoot at a faster rate for a period of time
+PowerUpHealth: This class models a power up which gives the player 20 extra health
+TextBox: This class models a textbox which the user can input text into. The data can be passed to other classes.
+Tree: This class models a tree which is present in the Outdoor Field stage
+Bullet: This class models a bullet which does damage to the opposing player when shot
+Firearm: This class models a firearm which is extended by the various types of guns available in the game
+Rifle: This class models a rifle, which is a type of gun and shoots bullets at a faster rate than a shotgun
+Shotgun: This class models a shotgun which shoots bullets at a slower rate than a rifle
+DrawingSurface: This class models a surface on which the game is drawn
+RoommateMatcher: This class runs all the components of the program
+Instructions: This class models the screen which displays the instructions
+Library: This class models the library stage
+LivingRoom: This class models the Living Room stage
+MainMenu: This class models the Main Menu which first appears when the program starts
+MatchFinder: This class models the screen that displays the closest match to the current user
+OutdoorField: This class models the Outdoor Field stage that the players can play in
+PlayerMenu: This class models the menu in which the users enter their names
+PlayerOneSelect: This class models the stage in which the first user selects his or her character
+PlayerTwoSelect: This class models the screen in which the second user choose his or her character
+Stage: This class is used to control the stage backdrop being displayed
+StageMenu: This class models the menu in which the users select which stage they wish to play in
+StageType: This class is used as a basis for all the playable stages
+
 
 Responsibilities:
 Vikram - UI, design the game
 Kishore - Data comparison, knife and sword
 Rohit - Design the player, gun, bullets, interaction with tree 
 Feedback given by - Helen Wang, Anushka Saran, Lily Li
-textbox code - https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/ (tip #13)
+Textbox code - https://amnonp5.wordpress.com/2012/01/28/25-life-saving-tips-for-processing/ (tip #13)
+Sprite Animation - https://www.youtube.com/watch?v=xvjrsBC9Vnc
 
 Feedback:
 1.  Gun1 and Gun2 extends Gun too (same thing for Sword), where Gun1 and Gun2 is not connected to Person (just like Shelby's example)

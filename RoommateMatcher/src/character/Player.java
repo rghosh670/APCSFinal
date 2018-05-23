@@ -49,29 +49,28 @@ public class Player implements Hitboxable {
 	private final double grav = .6;
 	private boolean onGround;
 
-	protected int health;
-	protected boolean justHit, alive;
-	protected int healthCooldown;
-	protected HealthBar healthBar;
+	private int health;
+	private boolean justHit, alive;
+	private int healthCooldown;
+	private HealthBar healthBar;
 
-	protected float originalBottom;
-	protected float bottom;
+	private float originalBottom;
+	private float bottom;
 
-	protected boolean inTree, onLadder, onCouch;
+	private boolean inTree, onLadder, onCouch;
+	private int fireRateIncrease, bulletSpeedIncrease;
+	private boolean frIncrease, bsIncrease;
 
-	protected int fireRateIncrease, bulletSpeedIncrease;
-	protected boolean frIncrease, bsIncrease;
+	private Player opponent, selfResetPoint;
+	private Knife knife;
+	private Sword sword;
+	private boolean isKnife;
+	private boolean isGun;
 
-	protected Player opponent, selfResetPoint;
-	protected Knife knife;
-	protected Sword sword;
-	protected boolean isKnife;
-	protected boolean isGun;
+	private int gunSwitchCooldown, bladeSwitchCooldown;
+	private boolean gunSwitchCooldownBool, bladeSwitchCooldownBool;
 
-	protected int gunSwitchCooldown, bladeSwitchCooldown;
-	protected boolean gunSwitchCooldownBool, bladeSwitchCooldownBool;
-
-	protected PlayerState ps;
+	private PlayerState ps;
 
 	private PImage my_sprite_sheet_right = null, my_sprite_sheet_left = null;
 
@@ -216,7 +215,6 @@ public class Player implements Hitboxable {
 				height = (int) (p.height / 7.03125);
 			}
 
-	
 			hitbox.setWidth(p.width / 16);
 			hitbox.setHeight(height);
 		}
@@ -444,7 +442,7 @@ public class Player implements Hitboxable {
 	}
 
 	public void getShot(Player other) {
-	
+
 		if (!justHit && health > other.getGun().getDamage()) {
 			health -= other.getGun().getDamage();
 			justHit = true;
