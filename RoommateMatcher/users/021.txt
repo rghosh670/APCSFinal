@@ -1,8 +1,8 @@
 name: Kishore Srinivas
 images: Smurf, Anime, Trump
 weapons: Rifle
-offense: 5.0
-defense: 1.5
+offense: 5.499999999999998
+defense: -93.5
 patience: 8.0
 attack time: 2.0
 points: 100.0
