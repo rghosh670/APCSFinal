@@ -67,6 +67,7 @@ public class Player implements Hitboxable {
 	protected Sword sword;
 	protected boolean isKnife;
 	protected boolean isGun;
+	private int numJumps;
 
 	protected int gunSwitchCooldown, bladeSwitchCooldown;
 	protected boolean gunSwitchCooldownBool, bladeSwitchCooldownBool;
@@ -80,9 +81,6 @@ public class Player implements Hitboxable {
 	}
 
 	public Player(PApplet p, int xPos, int yPos, PlayerState ps, Player opponent) {
-		System.out.println(
-				">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> PLAYER CREATED <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
-
 		this.p = p;
 		this.x = xPos + 30;
 		this.y = yPos;
@@ -97,17 +95,10 @@ public class Player implements Hitboxable {
 		health = 100;
 		healthBar = new HealthBar(p, this);
 		alive = true;
+		numJumps = 0;
 
 		originalBottom = p.height - height - DrawingSurface.background.getStageType().getGround();
 		bottom = originalBottom;
-
-		// try {
-		// DrawingSurface.p1.setOpponent(DrawingSurface.p2);
-		// DrawingSurface.p2.setOpponent(DrawingSurface.p1);
-		// } catch (NullPointerException e) {
-		//
-		// }
-
 		selfResetPoint = this;
 	}
 
@@ -225,9 +216,6 @@ public class Player implements Hitboxable {
 				width = (int) (p.width / 11.25);
 				height = (int) (p.height / 7.03125);
 			}
-
-			System.out.println("Playerstate: " + ps
-					+ " ============================================================================");
 			hitbox.setWidth(p.width / 16);
 			hitbox.setHeight(height);
 		}
@@ -276,6 +264,7 @@ public class Player implements Hitboxable {
 			p.popStyle();
 		} else {
 			user.changeDefense(-0.5);
+			user.changePatience(-numJumps/30);
 			user.writeToFile();
 		}
 	}
@@ -455,9 +444,7 @@ public class Player implements Hitboxable {
 		System.out.println(speed_x);
 	}
 
-	public void getShot(Player other) {
-
-	
+	public void getShot(Player other) {	
 		if (!justHit && health > other.getGun().getDamage()) {
 			health -= other.getGun().getDamage();
 			other.getUser().changeOffense(0.1);

@@ -1,8 +1,8 @@
 name: Justin Yim
 images: Smurf, Anime, Trump
 weapons: shotgun
-points: 100.0
-patience: 3
-attack time: 1
 offense: 9.0
-defense: 2.0
+defense: -62.5
+patience: 3.0
+attack time: 1.0
+points: 100.0

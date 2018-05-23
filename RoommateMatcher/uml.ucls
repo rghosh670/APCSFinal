@@ -1,582 +1,962 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
-  <class id="1" language="java" name="main.Main" project="RoommateMatcher" file="/RoommateMatcher/src/main/Main.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="101" x="178" y="18"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="2" language="java" name="main.DrawingSurface" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/main/DrawingSurface.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="57" width="116" x="395" y="26"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="3" language="java" name="blades.Blade" project="RoommateMatcher" 
+  <class id="1" language="java" name="blades.Blade" project="RoommateMatcher" 
     file="/RoommateMatcher/src/blades/Blade.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="274" y="160"/>    
+    <position height="66" width="123" x="27" y="307"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="4" language="java" name="blades.Knife" project="RoommateMatcher" 
+  <class id="2" language="java" name="blades.Knife" project="RoommateMatcher" 
     file="/RoommateMatcher/src/blades/Knife.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="526" y="239"/>    
+    <position height="66" width="123" x="37" y="177"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="blades.Sword" project="RoommateMatcher" 
+  <class id="3" language="java" name="blades.Sword" project="RoommateMatcher" 
     file="/RoommateMatcher/src/blades/Sword.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="282" y="240"/>    
+    <position height="66" width="123" x="24" y="420"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="firearms.Firearm" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/firearms/Firearm.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="641" y="46"/>    
+  <class id="4" language="java" name="character.HealthBar" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/character/HealthBar.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="263" y="262"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="7" language="java" name="firearms.Rifle" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/firearms/Rifle.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="877" y="-21"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="8" language="java" name="firearms.Shotgun" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/firearms/Shotgun.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="767" y="140"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="9" language="java" name="firearms.Bullet" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/firearms/Bullet.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="605" y="-66"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="10" language="java" name="character.Hitbox" project="RoommateMatcher" 
+  <class id="5" language="java" name="character.Hitbox" project="RoommateMatcher" 
     file="/RoommateMatcher/src/character/Hitbox.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="249" y="-146"/>    
+    <position height="66" width="123" x="372" y="136"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="11" language="java" name="character.Player" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/character/Player.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="769" y="-218"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <interface id="12" language="java" name="character.Hitboxable" project="RoommateMatcher" 
+  <interface id="6" language="java" name="character.Hitboxable" project="RoommateMatcher" 
     file="/RoommateMatcher/src/character/Hitboxable.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="103" x="381" y="-227"/>    
+    <position height="66" width="142" x="578" y="264"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </interface>  
-  <class id="13" language="java" name="data.User" project="RoommateMatcher" file="/RoommateMatcher/src/data/User.java" 
+  <class id="7" language="java" name="character.Player" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/character/Player.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="422" y="495"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="data.User" project="RoommateMatcher" file="/RoommateMatcher/src/data/User.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="232" x="-19" y="-201"/>    
+    <position height="66" width="123" x="634" y="38"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="14" language="java" name="data.MatchMaker" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/data/MatchMaker.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="198" x="-7" y="-104"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="15" language="java" name="stages.Button" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/stages/Button.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="92" x="121" y="121"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="16" language="java" name="stages.Stage" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/stages/Stage.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="92" x="415" y="-57"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <enumeration id="17" language="java" name="enums.StageState" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/enums/StageState.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="119" x="228" y="-56"/>    
+  <enumeration id="9" language="java" name="enums.MenuState" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/enums/MenuState.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="171" x="1607" y="-78"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </enumeration>  
-  <class id="18" language="java" name="stages.FieldElement" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/stages/FieldElement.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="96" x="50" y="14"/>    
+  <enumeration id="10" language="java" name="enums.PlayerState" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/enums/PlayerState.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="171" x="338" y="611"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <enumeration id="11" language="java" name="enums.StageState" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/enums/StageState.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="171" x="724" y="472"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="12" language="java" name="fieldElements.Button" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/Button.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="128" x="988" y="103"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="19" language="java" name="stages.Instructions" project="RoommateMatcher" 
+  <class id="13" language="java" name="fieldElements.Couch" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/Couch.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="1159" y="253"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="fieldElements.FieldElement" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/FieldElement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="140" x="704" y="-71"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="fieldElements.Ladder" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/Ladder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="1122" y="397"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="16" language="java" name="fieldElements.LivingRoomLadder" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/LivingRoomLadder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="191" x="1296" y="349"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="17" language="java" name="fieldElements.PowerUp" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/PowerUp.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="983" y="493"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="18" language="java" name="fieldElements.PowerUpBulletSpeed" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/PowerUpBulletSpeed.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="211" x="561" y="625"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="19" language="java" name="fieldElements.PowerUpFireRate" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/PowerUpFireRate.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="178" x="1122" y="673"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="fieldElements.PowerUpHealth" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/PowerUpHealth.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="160" x="1315" y="471"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="fieldElements.TextBox" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/TextBox.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="125" y="670"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="fieldElements.Tree" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/fieldElements/Tree.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="1254" y="110"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="firearms.Bullet" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/firearms/Bullet.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="141" x="491" y="-68"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="firearms.Firearm" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/firearms/Firearm.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="202" y="-64"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="firearms.Rifle" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/firearms/Rifle.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="43" y="-134"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="firearms.Shotgun" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/firearms/Shotgun.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="317" y="-148"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="main.DrawingSurface" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/main/DrawingSurface.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="163" x="1199" y="-59"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="main.RoommateMatcher" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/main/RoommateMatcher.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="190" x="1316" y="-151"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="stages.Instructions" project="RoommateMatcher" 
     file="/RoommateMatcher/src/stages/Instructions.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="92" x="945" y="263"/>    
+    <position height="66" width="127" x="197" y="499"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="20" language="java" name="stages.Ladder" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/stages/Ladder.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="47" y="186"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="21" language="java" name="stages.Library" project="RoommateMatcher" 
+  <class id="30" language="java" name="stages.Library" project="RoommateMatcher" 
     file="/RoommateMatcher/src/stages/Library.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="54" width="87" x="659" y="385"/>    
+    <position height="66" width="123" x="271" y="708"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="22" language="java" name="stages.LivingRoom" project="RoommateMatcher" 
+  <class id="31" language="java" name="stages.LivingRoom" project="RoommateMatcher" 
     file="/RoommateMatcher/src/stages/LivingRoom.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="95" x="773" y="379"/>    
+    <position height="66" width="130" x="1369" y="181"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="23" language="java" name="stages.OutsideField" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/stages/OutsideField.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="99" x="929" y="379"/>    
+  <class id="32" language="java" name="stages.MainMenu" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/stages/MainMenu.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="833" y="751"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="24" language="java" name="stages.PlayerMenu" project="RoommateMatcher" 
+  <class id="33" language="java" name="stages.MatchFinder" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/stages/MatchFinder.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="132" x="614" y="-153"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="stages.OutdoorField" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/stages/OutdoorField.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="138" x="1400" y="10"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="35" language="java" name="stages.PlayerMenu" project="RoommateMatcher" 
     file="/RoommateMatcher/src/stages/PlayerMenu.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="101" x="540" y="382"/>    
+    <position height="66" width="128" x="13" y="541"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="25" language="java" name="stages.StageMenu" project="RoommateMatcher" 
+  <class id="36" language="java" name="stages.PlayerOneSelect" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/stages/PlayerOneSelect.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="176" x="809" y="-155"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="stages.PlayerTwoSelect" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/stages/PlayerTwoSelect.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="176" x="1029" y="-150"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="38" language="java" name="stages.Stage" project="RoommateMatcher" 
+    file="/RoommateMatcher/src/stages/Stage.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="66" width="123" x="1456" y="-74"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="39" language="java" name="stages.StageMenu" project="RoommateMatcher" 
     file="/RoommateMatcher/src/stages/StageMenu.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="88" x="416" y="383"/>    
+    <position height="66" width="123" x="1576" y="112"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="26" language="java" name="stages.StageType" project="RoommateMatcher" 
+  <class id="40" language="java" name="stages.StageType" project="RoommateMatcher" 
     file="/RoommateMatcher/src/stages/StageType.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="748" y="247"/>    
+    <position height="66" width="123" x="1593" y="358"/>    
     <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="27" language="java" name="stages.TextBox" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/stages/TextBox.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="92" x="539" y="468"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="28" language="java" name="stages.Tree" project="RoommateMatcher" 
-    file="/RoommateMatcher/src/stages/Tree.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="53" width="87" x="258" y="458"/>    
-    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <association id="29">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="30" name="livingRoom"/>      
-      <multiplicity id="31" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="32">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="33" name="tree2"/>      
-      <multiplicity id="34" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="28" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="35">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="10"/>  
-  </dependency>  
-  <generalization id="36">    
-    <end type="SOURCE" refId="23"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <association id="37">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="38" name="knife">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="39" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="41">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="42" name="healthBar"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="4" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="40">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="41" name="hitbox">        
-        <position height="0" width="0" x="-5" y="-14"/>      
-      </attribute>      
-      <multiplicity id="42" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-5" y="-14"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="43">    
-    <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="44" name="branchHitbox"/>      
-      <multiplicity id="45" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="46">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="47" name="blade">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="48" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="3" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="49">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="6"/>  
-  </dependency>  
-  <realization id="50">    
-    <end type="SOURCE" refId="9"/>    
-    <end type="TARGET" refId="12"/>  
-  </realization>  
-  <association id="51">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="52" name="background">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="53" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="16" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="54">    
-    <end type="SOURCE" refId="11"/>    
-    <end type="TARGET" refId="12"/>  
-  </realization>  
-  <association id="55">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="56" name="p2">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="57" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <realization id="58">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="12"/>  
-  </realization>  
-  <generalization id="59">    
-    <end type="SOURCE" refId="24"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <association id="60">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="61" name="library"/>      
-      <multiplicity id="62" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="63">    
-    <end type="SOURCE" refId="28"/>    
-    <end type="TARGET" refId="18"/>  
-  </generalization>  
-  <association id="64">    
-    <end type="SOURCE" refId="10" navigable="false">      
-      <attribute id="65" name="object">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="66" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="12" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="67">    
-    <end type="SOURCE" refId="23" navigable="false">      
-      <attribute id="68" name="tree1"/>      
-      <multiplicity id="69" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="28" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="70">    
-    <end type="SOURCE" refId="22"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <association id="71">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="72" name="playerMenu"/>      
-      <multiplicity id="73" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="74">    
-    <end type="SOURCE" refId="24" navigable="false">      
-      <attribute id="75" name="t"/>      
-      <multiplicity id="76" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="27" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="77">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <association id="78">    
-    <end type="SOURCE" refId="9" navigable="false">      
-      <attribute id="79" name="player">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="80" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="81">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="82" name="hitbox">        
-        <position height="0" width="0" x="-5" y="-14"/>      
-      </attribute>      
-      <multiplicity id="83" minimum="0" maximum="1">        
-        <position height="0" width="0" x="-5" y="-14"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <dependency id="84">    
-    <end type="SOURCE" refId="15"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <generalization id="85">    
-    <end type="SOURCE" refId="19"/>    
-    <end type="TARGET" refId="26"/>  
-  </generalization>  
-  <dependency id="86">    
-    <end type="SOURCE" refId="1"/>    
-    <end type="TARGET" refId="2"/>  
-  </dependency>  
-  <association id="87">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="88" name="stageMenu"/>      
-      <multiplicity id="89" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="90">    
-    <end type="SOURCE" refId="14" navigable="false">      
-      <attribute id="91" name="users">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="92" minimum="0" maximum="2147483647">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="13" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="93">    
-    <end type="SOURCE" refId="5"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <generalization id="94">    
-    <end type="SOURCE" refId="4"/>    
-    <end type="TARGET" refId="3"/>  
-  </generalization>  
-  <dependency id="95">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="17"/>  
-  </dependency>  
-  <association id="96">    
-    <end type="SOURCE" refId="2" navigable="false">      
-      <attribute id="97" name="p1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="98" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
-    </end>    
-    <end type="TARGET" refId="11" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <generalization id="99">    
-    <end type="SOURCE" refId="8"/>    
-    <end type="TARGET" refId="6"/>  
-  </generalization>  
-  <association id="100">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="101" name="instructions"/>      
-      <multiplicity id="102" minimum="0" maximum="1"/>    
-    </end>    
-    <end type="TARGET" refId="26" navigable="true"/>    
-    <display labels="true" multiplicity="true"/>  
-  </association>  
-  <association id="103">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="104" name="shotgun">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="105" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="44">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="45" name="user2"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="8" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="106">    
-    <end type="SOURCE" refId="28" navigable="false">      
-      <attribute id="107" name="trunkHitbox"/>      
-      <multiplicity id="108" minimum="0" maximum="1"/>    
+  <association id="47">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="48" name="object"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="51" name="u"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="53">    
+    <end type="SOURCE" refId="34"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="54">    
+    <end type="SOURCE" refId="30"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="55">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <association id="56">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="57" name="ps"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="10" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="109">    
-    <end type="SOURCE" refId="21"/>    
-    <end type="TARGET" refId="26"/>  
+  <generalization id="59">    
+    <end type="SOURCE" refId="31"/>    
+    <end type="TARGET" refId="40"/>  
   </generalization>  
-  <association id="110">    
-    <end type="SOURCE" refId="11" navigable="false">      
-      <attribute id="111" name="rifle">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="112" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <association id="60">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="61" name="u"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="63">    
+    <end type="SOURCE" refId="33"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <generalization id="64">    
+    <end type="SOURCE" refId="37"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="65">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="66" name="users"/>      
+      <multiplicity id="67" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="68">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="69" name="player"/>      
+      <multiplicity id="70" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="7" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="113">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="114" name="outdoorField"/>      
-      <multiplicity id="115" minimum="0" maximum="1"/>    
+  <association id="71">    
+    <end type="SOURCE" refId="30" navigable="false">      
+      <attribute id="72" name="ladders"/>      
+      <multiplicity id="73" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="74">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="75" name="player"/>      
+      <multiplicity id="76" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="77">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="78" name="opponent"/>      
+      <multiplicity id="79" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="80">    
+    <end type="SOURCE" refId="29"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="81">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="82" name="outdoorField"/>      
+      <multiplicity id="83" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="84">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="85" name="hitbox"/>      
+      <multiplicity id="86" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="87">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="88">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="89" name="shotgun"/>      
+      <multiplicity id="90" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="26" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="116">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="6"/>  
+  <association id="91">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="92" name="stageMenu"/>      
+      <multiplicity id="93" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="94">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="95" name="bullets"/>      
+      <multiplicity id="96" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="97">    
+    <end type="SOURCE" refId="18"/>    
+    <end type="TARGET" refId="17"/>  
   </generalization>  
-  <association id="117">    
-    <end type="SOURCE" refId="16" navigable="false">      
-      <attribute id="118" name="ss">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </attribute>      
-      <multiplicity id="119" minimum="0" maximum="1">        
-        <position height="0" width="0" x="0" y="0"/>      
-      </multiplicity>    
+  <realization id="98">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="99">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="100" name="hitbox"/>      
+      <multiplicity id="101" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="102">    
+    <end type="SOURCE" refId="39"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <realization id="103">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="104">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="105" name="mainMenu"/>      
+      <multiplicity id="106" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="107">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="108" name="ss"/>      
+      <multiplicity id="109" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="110">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="111" name="hitbox"/>      
+      <multiplicity id="112" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="113">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="114" name="side1"/>      
+      <multiplicity id="115" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="116">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="117" name="match"/>      
+      <multiplicity id="118" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="119">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="120" name="selfResetPoint"/>      
+      <multiplicity id="121" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="122">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="123" name="p2"/>      
+      <multiplicity id="124" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="125">    
+    <end type="SOURCE" refId="24" navigable="false">      
+      <attribute id="126" name="player"/>      
+      <multiplicity id="127" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="128">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <realization id="129">    
+    <end type="SOURCE" refId="17"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="130">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="131" name="l1"/>      
+      <multiplicity id="132" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="133">    
+    <end type="SOURCE" refId="26"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <generalization id="134">    
+    <end type="SOURCE" refId="35"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="135">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="136" name="instructions"/>      
+      <multiplicity id="137" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="138">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="139" name="user"/>      
+      <multiplicity id="140" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="141">    
+    <end type="SOURCE" refId="17" navigable="false">      
+      <attribute id="142" name="hitbox"/>      
+      <multiplicity id="143" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="144">    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="145" name="title"/>      
+      <multiplicity id="146" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="147">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="148" name="secondPlayerName"/>      
+      <multiplicity id="149" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="150">    
+    <end type="SOURCE" refId="40" navigable="false">      
+      <attribute id="151" name="powerUp"/>      
+      <multiplicity id="152" minimum="0" maximum="1"/>    
     </end>    
     <end type="TARGET" refId="17" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <generalization id="120">    
-    <end type="SOURCE" refId="25"/>    
-    <end type="TARGET" refId="26"/>  
+  <association id="153">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="154" name="library"/>      
+      <multiplicity id="155" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="156">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="157" name="u"/>      
+      <multiplicity id="158" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="159">    
+    <end type="SOURCE" refId="15" navigable="false">      
+      <attribute id="160" name="hitbox"/>      
+      <multiplicity id="161" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="162">    
+    <end type="SOURCE" refId="19"/>    
+    <end type="TARGET" refId="17"/>  
   </generalization>  
+  <generalization id="163">    
+    <end type="SOURCE" refId="16"/>    
+    <end type="TARGET" refId="15"/>  
+  </generalization>  
+  <association id="164">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="165" name="mainSection"/>      
+      <multiplicity id="166" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="167">    
+    <end type="SOURCE" refId="20"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <generalization id="168">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <realization id="169">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="170">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="171" name="tree2"/>      
+      <multiplicity id="172" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="173">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="174" name="drawing"/>      
+      <multiplicity id="175" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="27" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="176">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="177" name="trunkHitbox"/>      
+      <multiplicity id="178" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="179">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="180" name="background"/>      
+      <multiplicity id="181" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="38" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="182">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="183">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="184" name="playerOneSelect"/>      
+      <multiplicity id="185" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="186">    
+    <end type="SOURCE" refId="32"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="187">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="188" name="tree1"/>      
+      <multiplicity id="189" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="22" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="190">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <generalization id="191">    
+    <end type="SOURCE" refId="22"/>    
+    <end type="TARGET" refId="14"/>  
+  </generalization>  
+  <association id="192">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="193" name="knife"/>      
+      <multiplicity id="194" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="2" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="195">    
+    <end type="SOURCE" refId="25"/>    
+    <end type="TARGET" refId="24"/>  
+  </generalization>  
+  <association id="196">    
+    <end type="SOURCE" refId="39" navigable="false">      
+      <attribute id="197" name="title"/>      
+      <multiplicity id="198" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="199">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="1"/>  
+  </generalization>  
+  <realization id="200">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="6"/>  
+  </realization>  
+  <association id="201">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="202" name="l2"/>      
+      <multiplicity id="203" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="16" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <generalization id="204">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="40"/>  
+  </generalization>  
+  <association id="205">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="206" name="couch"/>      
+      <multiplicity id="207" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="13" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="208">    
+    <end type="SOURCE" refId="22" navigable="false">      
+      <attribute id="209" name="branchHitbox"/>      
+      <multiplicity id="210" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="211">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="212" name="rifle"/>      
+      <multiplicity id="213" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="25" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="214">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="215" name="title"/>      
+      <multiplicity id="216" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="217">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="218" name="ms"/>      
+      <multiplicity id="219" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="220">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="221" name="sword"/>      
+      <multiplicity id="222" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="3" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="223">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="224" name="playerTwoSelect"/>      
+      <multiplicity id="225" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="226">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="227" name="p1"/>      
+      <multiplicity id="228" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="229">    
+    <end type="SOURCE" refId="35" navigable="false">      
+      <attribute id="230" name="firstPlayerName"/>      
+      <multiplicity id="231" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="21" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="232">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="233" name="side2"/>      
+      <multiplicity id="234" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="235">    
+    <end type="SOURCE" refId="23" navigable="false">      
+      <attribute id="236" name="player"/>      
+      <multiplicity id="237" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="238">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="239" name="livingRoom"/>      
+      <multiplicity id="240" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="241">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="242" name="matchMaker"/>      
+      <multiplicity id="243" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="244">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="245" name="user1"/>      
+      <multiplicity id="246" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="8" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="247">    
+    <end type="SOURCE" refId="38" navigable="false">      
+      <attribute id="248" name="playerMenu"/>      
+      <multiplicity id="249" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="40" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    

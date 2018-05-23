@@ -2,7 +2,6 @@ package stages;
 
 import java.util.Map.Entry;
 
-import data.MatchMaker;
 import data.User;
 import fieldElements.Button;
 import main.RoommateMatcher;
