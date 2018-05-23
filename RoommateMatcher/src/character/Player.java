@@ -456,31 +456,11 @@ public class Player implements Hitboxable {
 	}
 
 	public void getShot(Player other) {
-		// if (opponent != null) {
-		// if (!justHit && health > opponent.getGun().getDamage()) {
-		// health -= opponent.getGun().getDamage();
-		// justHit = true;
-		// opponent.getUser().changeOffense(0.05);
-		// this.getUser().changeDefense(-0.05);
-		// } else if (health < opponent.getGun().getDamage()) {
-		// System.out.println("EEPS");
-		// health = 0;
-		// alive = false;
-		// } else {
-		// System.out.println("OPPS");
-		// while (opponent != null) {
-		// DrawingSurface.p1.setOpponent(DrawingSurface.p2);
-		// DrawingSurface.p2.setOpponent(DrawingSurface.p1);
-		// System.out.println("I cry");
-		// }
-		// }
-		// }
-
 		if (!justHit && health > other.getGun().getDamage()) {
 			health -= other.getGun().getDamage();
+			other.getUser().changeOffense(0.1);
 			justHit = true;
 		} else if (health <= other.getGun().getDamage()) {
-
 			health = 0;
 			alive = false;
 			DrawingSurface.gameOver = true;

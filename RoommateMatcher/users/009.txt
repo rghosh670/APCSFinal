@@ -1,6 +1,6 @@
 name: Benjamin Gu
 images: Smurf, Anime, Trump
-weapons: blade
+weapons: knife
 offense: 7.0
 defense: -103.5
 patience: 9.0
