@@ -71,6 +71,8 @@ public class Player implements Hitboxable {
 	private boolean gunSwitchCooldownBool, bladeSwitchCooldownBool;
 
 	private PlayerState ps;
+	
+	private int numJumps;
 
 	private PImage my_sprite_sheet_right = null, my_sprite_sheet_left = null;
 
