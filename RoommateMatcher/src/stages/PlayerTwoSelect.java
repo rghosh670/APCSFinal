@@ -53,7 +53,6 @@ public class PlayerTwoSelect extends StageType {
 
 		if (u == null && DrawingSurface.p1.getUser() != null) {
 			u = DrawingSurface.p2.getUser();
-			System.out.println("2: " + u.getName() + " " + u.getImages().toString());
 			smurf = u.getImages().contains("Smurf");
 			anime = u.getImages().contains("Anime");
 			trump = u.getImages().contains("Trump");
