@@ -1,0 +1,8 @@
+name: Emily Yao
+images: anime
+weapons: knife
+points: 100
+patience: 5
+attack time: 5
+offense: 5
+defense: 5

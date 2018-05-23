@@ -1,0 +1,8 @@
+name: Jonathan Wellingstein
+images: Trump
+weapons: rifle
+points: 100
+patience: 2
+attack time: 0.2
+offense: 2
+defense: 3

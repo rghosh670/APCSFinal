@@ -1,0 +1,8 @@
+name: Leo Zheng
+images: Trump
+weapons: Shotgun
+points: 100
+patience: 4
+attack time: 2
+offense: 9
+defense: 3

@@ -1,8 +1,8 @@
-name: Charles Hu
+name: Helen Wang
 images: Trump
-weapons: rifle
+weapons: blade
 points: 100
-patience: 5.5
+patience: 5
 attack time: 1
 offense: 8
 defense: 3

@@ -1,8 +1,8 @@
-name: Kush Patel
+name: Evan Su
 images: Anime, Smurf
 weapons: rifle
 points: 100
 patience: 8.5
-attack time: 3
+attack time: 1
 offense: 9
-defense: 3
+defense: 9
