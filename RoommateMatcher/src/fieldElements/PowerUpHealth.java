@@ -5,6 +5,13 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import stages.Stage;
 
+/**
+ * 
+ * This class models a power up which gives the player 20 extra health
+ * 
+ * @author rohitghosh
+ *
+ */
 public class PowerUpHealth extends PowerUp {
 
 	private PImage healthImage;

@@ -9,6 +9,14 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class models the screen in which the second user choose his or her
+ * character
+ * 
+ * @author ksrinivas788
+ *
+ */
 public class PlayerTwoSelect extends StageType {
 
 	private PImage playerMenuBackground, smurfPic, animePic, trumpPic;
@@ -18,7 +26,7 @@ public class PlayerTwoSelect extends StageType {
 
 	public PlayerTwoSelect(PApplet p) {
 		super(p);
-		
+
 		playerMenuBackground = p.loadImage("stageImages" + Stage.fileSeparator + "MenuBackground.jpg");
 		playerMenuBackground.resize(p.width, p.height);
 
@@ -45,40 +53,40 @@ public class PlayerTwoSelect extends StageType {
 
 		if (u == null && DrawingSurface.p1.getUser() != null) {
 			u = DrawingSurface.p2.getUser();
-			System.out.println("2: " + u.getName() + " " + u.getImages().toString());
 			smurf = u.getImages().contains("Smurf");
 			anime = u.getImages().contains("Anime");
 			trump = u.getImages().contains("Trump");
 		}
-//		System.out.println("1: " + smurf + ", " + anime + ", " + trump);
 
 		title.draw();
 
 		p.imageMode(PConstants.CENTER);
 
-		if (smurf) drawSmurf();		
-		if (anime) drawAnime();		
-		if (trump) drawTrump();
-		
+		if (smurf)
+			drawSmurf();
+		if (anime)
+			drawAnime();
+		if (trump)
+			drawTrump();
+
 		Button m = new Button(0, p.height - p.height / 10, p.width / 6, p.height / 10, p, "Menu");
 		m.draw();
 
 		p.popStyle();
 		p.popMatrix();
 	}
-	
+
 	public void drawSmurf() {
 		Button smurf = new Button(p.width / 5, p.height / 2 + p.height / 7, p.width / 5, p.height / 10, p, "Smurf",
 				true, true);
 		smurf.draw();
-		
 
 		Button smurf2 = new Button(p.width / 5 - p.width / 10, p.height / 2 + p.height / 8 - p.height / 5 - 30,
 				p.width / 5, p.height / 5, p, "Smurf", false, true, true);
 		smurf2.draw();
 		p.image(smurfPic, smurf2.getX() + p.width / 10, (smurf2.getY() + smurf2.getHeight() / 2));
 	}
-	
+
 	public void drawAnime() {
 		Button anime = new Button(p.width / 2, p.height / 2 + p.height / 7, p.width / 5, p.height / 10, p, "Anime?",
 				true, true);
@@ -89,7 +97,7 @@ public class PlayerTwoSelect extends StageType {
 		anime2.draw();
 		p.image(animePic, anime2.getX() + p.width / 10, (anime2.getY() + anime2.getHeight() / 2));
 	}
-	
+
 	public void drawTrump() {
 		Button trump = new Button(4 * p.width / 5, p.height / 2 + p.height / 7, p.width / 5, p.height / 10, p, "Trump",
 				true, true);
@@ -98,7 +106,7 @@ public class PlayerTwoSelect extends StageType {
 		Button trump2 = new Button(4 * p.width / 5 - p.width / 10, p.height / 2 + p.height / 8 - p.height / 5 - 30,
 				p.width / 5, p.height / 5, p, "Trump", false, true, true);
 		trump2.draw();
-		p.image(trumpPic, trump2.getX() + p.width / 10, (trump2.getY() + trump2.getHeight() / 2));		
+		p.image(trumpPic, trump2.getX() + p.width / 10, (trump2.getY() + trump2.getHeight() / 2));
 	}
 
 }

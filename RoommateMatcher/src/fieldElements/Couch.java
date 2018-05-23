@@ -5,6 +5,13 @@ import character.Hitboxable;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class draws hitboxes around the couch in the living room map
+ * 
+ * @author rohitghosh
+ *
+ */
 public class Couch extends FieldElement implements Hitboxable {
 
 	private Hitbox mainSection, side1, side2;

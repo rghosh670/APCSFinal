@@ -3,6 +3,13 @@ package fieldElements;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class represents an object that may be present on a map
+ * 
+ * @author vshirsat573
+ *
+ */
 public class FieldElement {
 	protected PImage elementImage;
 	protected PApplet p;

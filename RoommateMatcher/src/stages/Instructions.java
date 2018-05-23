@@ -4,6 +4,13 @@ import fieldElements.Button;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class models the screen which displays the instructions
+ * 
+ * @author vshirsat573
+ *
+ */
 public class Instructions extends StageType {
 	private PImage instructions;
 

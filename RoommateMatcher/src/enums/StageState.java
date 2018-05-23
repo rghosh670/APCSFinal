@@ -3,7 +3,7 @@ package enums;
 /**
  * This tracks the current stage that the game is in
  * 
- * @author vshirsat573
+ * @author rohitghosh
  *
  */
 public enum StageState {

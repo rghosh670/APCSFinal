@@ -68,18 +68,14 @@ public class TextBox {
 					text = text.substring(0, text.length() - 1);
 				}
 			} else if (p.key == PConstants.ENTER) {
-				System.out.println(
-						text.replace(promptText, "") + "<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<");
 				User u = RoommateMatcher.selectUser(text.replace(promptText, ""), userNumber);
 				if (u != null) {
 					done = true;
 					text = promptText;
 					if (userNumber == 1) {
-						System.out.println("1 entered");
 						return;
 					}
 					if (userNumber == 2) {
-						System.out.println("2 entered");
 						DrawingSurface.background.setMenu(MenuState.MAIN_MENU);
 						DrawingSurface.background.setIsStage(false);
 					}

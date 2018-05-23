@@ -456,6 +456,8 @@ public class Player implements Hitboxable {
 	}
 
 	public void getShot(Player other) {
+
+	
 		if (!justHit && health > other.getGun().getDamage()) {
 			health -= other.getGun().getDamage();
 			other.getUser().changeOffense(0.1);

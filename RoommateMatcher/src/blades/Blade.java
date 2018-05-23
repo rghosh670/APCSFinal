@@ -42,7 +42,6 @@ public class Blade implements Hitboxable {
 
 	public void draw() {
 		moveTo(player.getHandPosition()[0], player.getHandPosition()[1]);
-		System.out.println(player + " " + DrawingSurface.p1);
 
 		hitbox.draw();
 

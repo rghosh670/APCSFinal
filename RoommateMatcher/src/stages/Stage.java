@@ -30,7 +30,7 @@ public class Stage {
 		ms = MenuState.PLAYER_MENU;
 		livingRoom = new LivingRoom(p);
 		library = new Library(p);
-		outdoorField = new OutsideField(p);
+		outdoorField = new OutdoorField(p);
 		stageMenu = new StageMenu(p);
 		playerMenu = new PlayerMenu(p);
 		instructions = new Instructions(p);

@@ -6,6 +6,13 @@ import main.DrawingSurface;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class models a power up which falls down randomly 
+ * 
+ * @author rohitghosh
+ *
+ */
 public class PowerUp implements Hitboxable {
 	private PApplet p;
 	private PImage powerUpImage;

@@ -8,6 +8,13 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class models the stage in which the first user selects his or her character
+ * 
+ * @author ksrinivas788
+ *
+ */
 public class PlayerOneSelect extends StageType {
 
 	private PImage playerMenuBackground, smurfPic, animePic, trumpPic;
@@ -44,12 +51,10 @@ public class PlayerOneSelect extends StageType {
 
 		if (u == null && DrawingSurface.p1.getUser() != null) {
 			u = DrawingSurface.p1.getUser();
-			System.out.println("1: " + u.getName() + " " + u.getImages().toString());
 			smurf = u.getImages().contains("Smurf");
 			anime = u.getImages().contains("Anime");
 			trump = u.getImages().contains("Trump");
 		}
-//		System.out.println("1: " + smurf + ", " + anime + ", " + trump);
 
 		title.draw();
 

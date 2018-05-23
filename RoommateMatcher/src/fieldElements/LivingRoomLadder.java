@@ -4,6 +4,14 @@ import processing.core.PApplet;
 import processing.core.PImage;
 import stages.Stage;
 
+
+/**
+ * 
+ * This class models a ladder present in the living room stage
+ * 
+ * @author rohitghosh
+ *
+ */
 public class LivingRoomLadder extends Ladder {
 
 	private PImage originalLadderPic, ladderPic;

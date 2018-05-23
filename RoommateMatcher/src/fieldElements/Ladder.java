@@ -5,6 +5,13 @@ import character.Hitboxable;
 import processing.core.PApplet;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class models a ladder present in the Library and LivingRoom stages
+ * 
+ * @author vshirsat573
+ *
+ */
 public class Ladder extends FieldElement implements Hitboxable {
 
 	private Hitbox hitbox;

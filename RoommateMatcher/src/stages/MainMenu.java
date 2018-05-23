@@ -5,6 +5,13 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class models the Main Menu which first appears when the program starts
+ * 
+ * @author rohitghosh
+ *
+ */
 public class MainMenu extends StageType {
 
 	private PImage mainMenu, logo;

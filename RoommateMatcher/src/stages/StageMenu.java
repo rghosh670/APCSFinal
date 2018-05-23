@@ -5,6 +5,14 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PImage;
 
+/**
+ * 
+ * This class models the menu in which the users select which stage they wish to
+ * play in
+ * 
+ * @author rohitghosh
+ *
+ */
 public class StageMenu extends StageType {
 
 	private PImage stageMenu, library, livingRoom, outdoorField;
@@ -31,7 +39,7 @@ public class StageMenu extends StageType {
 		p.pushStyle();
 
 		title.draw();
-		
+
 		Button of = new Button(p.width / 5, p.height / 2 + p.height / 7, p.width / 5, p.height / 10, p, "Outdoor Field",
 				true, true);
 		of.draw();
